@@ -8,6 +8,6 @@ package com.zhg.javakc.modules.supply.supplies.dao;
 public class SuppliesDao {
     //11
     public static void main(String[] args) {
-
+//2222
     }
 }
