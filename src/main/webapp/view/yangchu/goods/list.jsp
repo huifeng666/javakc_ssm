@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>测试展示列表页面</title>
-		<%@ include file="../../common/jsp/header.jsp"%>
+		<%@ include file="../../../common/jsp/header.jsp"%>
 	</head>
 	<body>
 		<div class="wrapper wrapper-content animated fadeInRight">
