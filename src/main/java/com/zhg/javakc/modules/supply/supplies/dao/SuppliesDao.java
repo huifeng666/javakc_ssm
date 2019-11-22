@@ -6,4 +6,8 @@ package com.zhg.javakc.modules.supply.supplies.dao;
  * @Version 1.0
  */
 public class SuppliesDao {
+    //11
+    public static void main(String[] args) {
+//2222
+    }
 }
