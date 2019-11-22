@@ -41,7 +41,7 @@ public class DictionaryController {
 	{
 		model.put("page", dictionaryService.findDictionary(new Page<DictionaryEntity>(request, response), entity));
 		model.put("entity", entity);
-		return "test/list";
+		return "dictionary/list";
 	}
 	
 	/**
