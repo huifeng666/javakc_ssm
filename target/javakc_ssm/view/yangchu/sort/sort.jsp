@@ -26,7 +26,7 @@
 		                 </div>
 	                </div>
 	                <div class="col-sm-4">
-	                	<input class="form-control" id="search" name="testName" value="${testEntity.testName }" type="text" placeholder="查询内容 回车搜索"/>
+	                	<input class="form-control" id="search" name="sortName" value="${sortEntity.sortName }" type="text" placeholder="查询内容 回车搜索"/>
 	                </div>
 	                 <!-- ------------按钮组 end------------ -->
 						<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
@@ -35,19 +35,20 @@
 					        <thead>
 					            <tr>
 					                <th><input type="checkbox" id="checkall"/></th>
-					                <th>名称</th>
-					                <th>性别</th>
-					                <th>时间</th>
+					                <th>分类名称</th>
+					                <th>编号</th>
+					                <th>缩写</th>
 					            </tr>
 					        </thead>
 					        <tbody>
 					        	<c:set var="vs"></c:set>
 					        	<c:forEach var="e" items="${page.list }" varStatus="v">
 						            <tr>
-						                <td><input type="checkbox" name="ids" value="${e.testId }"/></td>
-						                <td>${e.testName }</td>
-						                <td><zhg:show  codeTp="sex" value="${e.testSex }" /></td>
-						                <td><fmt:formatDate value="${e.testDate}" pattern="yyyy-MM-dd"></fmt:formatDate></td>
+						                <td><input type="checkbox" name="ids" value="${e.sortId }"/></td>
+						                <td>${e.sortName }</td>
+						                <td><zhg:show  codeTp="sex" value="${e.sortBianhao }" /></td>
+										<td>${e.sortSuoxie}</td>
+<%--						                <td><fmt:formatDate value="${e.testDate}" pattern="yyyy-MM-dd"></fmt:formatDate></td>--%>
 						            </tr>
 					            </c:forEach>
 					        </tbody>

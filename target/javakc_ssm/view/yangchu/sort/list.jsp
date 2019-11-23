@@ -4,7 +4,26 @@
 	<head>
 		<title>测试展示列表页面</title>
 		<%@ include file="../../../common/jsp/header.jsp"%>
+		<script type="text/javascript" src="<%=path%>static/js/plugins/ztree/jquery.ztree.core-3.5.js"></script>
+		<link href="<%=path%>/static/css/plugins/ztree/zTreeStyle/zTreeStyle.css" rel="stylesheet">
 	</head>
+
+	<script type="javascript">
+	  $(function(){
+	  var setting = {
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+
+	  $.post(root+'sort/querySort.do',function(zNodes){
+		  $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+	  },'json')
+
+	  })
+	</script>
 	<body>
 		<div class="wrapper wrapper-content animated fadeInRight">
 			<div class="ibox float-e-margins">
@@ -29,30 +48,9 @@
 	                	<input class="form-control" id="search" name="testName" value="${testEntity.testName }" type="text" placeholder="查询内容 回车搜索"/>
 	                </div>
 	                 <!-- ------------按钮组 end------------ -->
-						<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
-						<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
 		                 <table class="table table-striped table-bordered table-hover table-condensed">
-					        <thead>
-					            <tr>
-					                <th><input type="checkbox" id="checkall"/></th>
-					                <th>名称</th>
-					                <th>性别</th>
-					                <th>时间</th>
-					            </tr>
-					        </thead>
-					        <tbody>
-					        	<c:set var="vs"></c:set>
-					        	<c:forEach var="e" items="${page.list }" varStatus="v">
-						            <tr>
-						                <td><input type="checkbox" name="ids" value="${e.testId }"/></td>
-						                <td>${e.testName }</td>
-						                <td><zhg:show  codeTp="sex" value="${e.testSex }" /></td>
-						                <td><fmt:formatDate value="${e.testDate}" pattern="yyyy-MM-dd"></fmt:formatDate></td>
-						            </tr>
-					            </c:forEach>
-					        </tbody>
+							 <ul id="treeDemo" class="ztree"></ul>
 					    </table>
-				    <div class="page">${page}</div>
 			     </div>
 			     </form>
 			</div>
