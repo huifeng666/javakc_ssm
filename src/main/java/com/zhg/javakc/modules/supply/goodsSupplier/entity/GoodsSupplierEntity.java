@@ -20,6 +20,8 @@ public class GoodsSupplierEntity extends BaseEntity<GoodsSupplierEntity> {
      */
     private String orgId;
 
+
+
     public String getGoodssupplierId() {
         return goodssupplierId;
     }

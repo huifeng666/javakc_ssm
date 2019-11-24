@@ -25,9 +25,13 @@
 	                        </button>
 		                 </div>
 	                </div>
-	                <div class="col-sm-4">
-	                	<input class="form-control" id="search" name="testName" value="${testEntity.testName }" type="text" placeholder="查询内容 回车搜索"/>
-	                </div>
+
+<%--						<div class="col-sm-4">--%>
+<%--							<input class="form-control" id="search" name="testName" value="${testEntity.testName }"type="text" placeholder="查询内容 回车搜索"/>--%>
+<%--							<button class="btn" type="button"><i class="icon-search"></i></button>--%>
+<%--						</div>--%>
+
+
 	                 <!-- ------------按钮组 end------------ -->
 						<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 						<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
@@ -35,9 +39,12 @@
 					        <thead>
 					            <tr>
 					                <th><input type="checkbox" id="checkall"/></th>
-					                <th>名称</th>
-					                <th>性别</th>
-					                <th>时间</th>
+					                <th>组织</th>
+					                <th>供应商</th>
+					                <th>物资</th>
+                                    <th>税率</th>
+                                    <th>收货组织</th>
+                                    <th>操作</th>
 					            </tr>
 					        </thead>
 					        <tbody>
