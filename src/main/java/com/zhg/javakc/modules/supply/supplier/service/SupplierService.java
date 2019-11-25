@@ -37,4 +37,9 @@ public class SupplierService extends BaseService<SupplierDao,SupplierEntity> {
 
     }
 
+    public void delete2(String id){
+        supplierDao.delete(id);
+
+    }
+
 }

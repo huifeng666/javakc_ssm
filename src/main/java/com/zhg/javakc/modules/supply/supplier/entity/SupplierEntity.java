@@ -21,7 +21,7 @@ public class SupplierEntity extends BaseEntity<SupplierEntity> {
     /**
      * 供应商类型
      */
-    private String supplierType;
+    private int supplierType;
     /**
      * 供应商组织
      */
@@ -64,7 +64,7 @@ public class SupplierEntity extends BaseEntity<SupplierEntity> {
     /**
      * 供应商联系人邮件
      */
-    private String supplierContectemall;
+    private String supplierContectemail;
     /**
      * 供应商是否启用门户
      */
@@ -73,10 +73,127 @@ public class SupplierEntity extends BaseEntity<SupplierEntity> {
      * 供应商是否必须合同
      */
     private int supplierContract;
-    /**
-     * 状态(0：正常；1：删除)
-     */
-    private int delfalg;
+
+
+    public String getSupplierId() {
+        return supplierId;
+    }
+
+    public void setSupplierId(String supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
+
+    public int getSupplierType() {
+        return supplierType;
+    }
+
+    public void setSupplierType(int supplierType) {
+        this.supplierType = supplierType;
+    }
+
+    public String getSupplierOrg() {
+        return supplierOrg;
+    }
+
+    public void setSupplierOrg(String supplierOrg) {
+        this.supplierOrg = supplierOrg;
+    }
+
+    public int getSupplierLevel() {
+        return supplierLevel;
+    }
+
+    public void setSupplierLevel(int supplierLevel) {
+        this.supplierLevel = supplierLevel;
+    }
+
+    public String getSupplierSim() {
+        return supplierSim;
+    }
+
+    public void setSupplierSim(String supplierSim) {
+        this.supplierSim = supplierSim;
+    }
+
+    public String getSupplierFaren() {
+        return supplierFaren;
+    }
+
+    public void setSupplierFaren(String supplierFaren) {
+        this.supplierFaren = supplierFaren;
+    }
+
+    public int getSupplierFarenph() {
+        return supplierFarenph;
+    }
+
+    public void setSupplierFarenph(int supplierFarenph) {
+        this.supplierFarenph = supplierFarenph;
+    }
+
+    public String getSupplierAddr() {
+        return supplierAddr;
+    }
+
+    public void setSupplierAddr(String supplierAddr) {
+        this.supplierAddr = supplierAddr;
+    }
+
+    public String getSupplierTrustnum() {
+        return supplierTrustnum;
+    }
+
+    public void setSupplierTrustnum(String supplierTrustnum) {
+        this.supplierTrustnum = supplierTrustnum;
+    }
+
+    public String getSupplierContact() {
+        return supplierContact;
+    }
+
+    public void setSupplierContact(String supplierContact) {
+        this.supplierContact = supplierContact;
+    }
+
+    public int getSupplierContectnum() {
+        return supplierContectnum;
+    }
+
+    public void setSupplierContectnum(int supplierContectnum) {
+        this.supplierContectnum = supplierContectnum;
+    }
+
+    public String getSupplierContectemall() {
+        return supplierContectemail;
+    }
+
+    public void setSupplierContectemall(String supplierContectemall) {
+        this.supplierContectemail = supplierContectemall;
+    }
+
+    public int getSupplierPortal() {
+        return supplierPortal;
+    }
+
+    public void setSupplierPortal(int supplierPortal) {
+        this.supplierPortal = supplierPortal;
+    }
+
+    public int getSupplierContract() {
+        return supplierContract;
+    }
+
+    public void setSupplierContract(int supplierContract) {
+        this.supplierContract = supplierContract;
+    }
 
 
 }

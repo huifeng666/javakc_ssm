@@ -10,4 +10,6 @@ import com.zhg.javakc.modules.supply.supplier.entity.SupplierEntity;
  * @Version 1.0
  */
 public interface SupplierDao extends BaseDao<SupplierEntity> {
+
+
 }
