@@ -22,7 +22,6 @@
 						<button type="button" class="btn btn-danger">近一月
 						</button>
 					</div>
-
 					<div class="col-sm-9">
 					     <label class="col-sm-1 control-label" for="ds_name">物资分类</label>
 						<div class="col-sm-4">
