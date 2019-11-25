@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.supply.supplier.dao.SupplierDao">
+    <resultMap id="supplier" type="supplier">
+        <id property="supplierId" column="supplier_id"/>
+        <id property="supplierName" column="supplier_name"/>
+        <id property="supplierType" column="supplier_type"/>
+        <id property="supplierOrg" column="supplier_org"/>
+        <id property="supplierLevel" column="supplier_level"/>
+        <id property="supplierSim" column="supplier_sim"/>
+        <id property="supplierFaren" column="supplier_faren"/>
+        <id property="supplierFarenph" column="supplier_farenph"/>
+        <id property="supplierAddr" column="supplier_addr"/>
+        <id property="supplierTrustnum" column="supplier_trustnum"/>
+        <id property="supplierContact" column="supplier_contact"/>
+        <id property="supplierContectnum" column="supplier_contectnum"/>
+        <id property="supplierContectemail" column="supplier_contectemail"/>
+        <id property="supplierPortal" column="supplier_portal"/>
+        <id property="supplierContract" column="supplier_contract"/>
+        <id property="createDate" column="create_time"/>
+        <id property="updateDate" column="update_time"/>
+    </resultMap>
+
+    <select id="findList" resultMap="supplier">
+        select
+        supplier_id,supplier_name,supplier_type,
+        supplier_contact,supplier_contectnum,supplier_portal,supplier_contract
+        from supplier where 1=1
+        <if test="supplierContact!='' and supplierContact!=null">
+            AND supplier_contact LIKE '%'||#{supplierContact}||'%'
+        </if>
+        <if test="supplierName!='' and supplierName!=null">
+            AND supplier_name LIKE '%'||#{supplierName}||'%'
+        </if>
+    </select>
+
+    <insert id="insert">
+        INSERT INTO supplier
+        (supplier_id,supplier_name,supplier_type,supplier_org,supplier_level,supplier_sim,supplier_faren,supplier_farenph,supplier_addr,supplier_trustnum,
+        supplier_contact,supplier_contectnum,supplier_contectemail,supplier_portal,supplier_contract)
+        VALUES
+        (#{supplierId},#{supplierName},#{supplierType},#{supplierOrg},#{supplierLevel},#{supplierSim},#{supplierFaren},#{supplierFarenph},#{supplierAddr},#{supplierTrustnum},
+        #{supplierContact},#{supplierContectnum},#{supplierContectemail},#{supplierPortal},#{supplierContract})
+    </insert>
+
+    <select id="get" resultMap="supplier">
+        SELECT supplier_id,supplier_name,supplier_type,supplier_org,supplier_level,
+        supplier_sim,supplier_faren,supplier_farenph,supplier_addr,supplier_trustnum,
+        supplier_contact,supplier_contectnum,supplier_contectemail,supplier_portal,supplier_contract
+        FROM supplier WHERE supplier_id=#{0}
+    </select>
+
+    <!--    <update id="update">-->
+    <!--        UPDATE DATA_TEST SET TEST_NAME=#{testName},TEST_SEX=#{testSex},TEST_DATE=#{testDate}-->
+    <!--        WHERE TEST_ID=#{testId}-->
+    <!--    </update>-->
+
+    <delete id="delete">
+        DELETE FROM supplier WHERE supplier_id IN
+        <foreach collection="array" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <update id="update">
+        UPDATE supplier SET
+        supplier_name=#{supplierName},supplier_type=#{supplierType},supplier_org=#{supplierOrg},supplier_level=#{supplierLevel},
+        supplier_sim=#{supplierSim},supplier_faren=#{supplierFaren},supplier_farenph=#{supplierFarenph},supplier_addr=#{supplierAddr},supplier_trustnum=#{supplierTrustnum},
+        supplier_contact=#{supplierContact},supplier_contectnum=#{supplierContectnum},supplier_contectemail=#{supplierContectemail},
+        supplier_portal=#{supplierPortal},supplier_contract=#{supplierContract}
+        WHERE supplier_id=#{supplierId}
+    </update>
+
+
+</mapper>

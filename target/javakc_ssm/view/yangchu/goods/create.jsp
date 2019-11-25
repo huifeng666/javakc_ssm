@@ -48,7 +48,6 @@
 							<div class="btn-group">
 								<label title="上传图片" for="inputImage" class="btn btn-primary">
 									<input type="file" accept="image/*" name="file" id="inputImage" class="hide">
-									上传新图片
 								</label>
 							</div>
 						</div>

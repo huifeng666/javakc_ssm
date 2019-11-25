@@ -1,7 +1,7 @@
 package com.zhg.javakc.modules.supply.goods.entity;
 
 import com.zhg.javakc.base.entity.BaseEntity;
-import oracle.sql.BLOB;
+
 
 /**
  * @Author huoyinglong
