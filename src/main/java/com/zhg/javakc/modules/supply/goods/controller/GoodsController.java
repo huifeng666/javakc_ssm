@@ -4,8 +4,6 @@ import com.zhg.javakc.base.page.Page;
 
 import com.zhg.javakc.modules.supply.goods.entity.GoodsEntity;
 import com.zhg.javakc.modules.supply.goods.service.GoodsService;
-
-import com.zhg.javakc.modules.test.entity.TestEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -88,6 +86,19 @@ public class GoodsController {
     public String delete(String[] ids){
         goodsService.delete(ids);
         return "redirect:goods.do";
+    }
+    /**
+     * 添加页面查询所有菜单
+     * @param goodsEntity 查询条件
+     * @param model	 页面传参对象
+     * @return			展示数据列表页面
+     * @throws Exception 抛出异常
+     */
+    @RequestMapping("/sort")
+    public String sort(GoodsEntity goodsEntity, ModelMap model) throws Exception
+    {
+        model.put("page", goodsService.findList(goodsEntity));
+        return "yangchu/sort/list";
     }
 
 }

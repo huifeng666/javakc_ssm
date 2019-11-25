@@ -16,10 +16,10 @@
                     <fieldset>
                         <legend>测试基本信息</legend>
                        <div class="form-group">
-							   <label class="col-sm-1 control-label" for="menupid">物资分类</label>
+							   <label class="col-sm-1 control-label">物资分类</label>
 							   <div class="col-sm-2">
-								   <input class="form-control" id="menupidValue" name="menuPid" type="hidden"/>
-								   <input class="form-control" id="menupid" type="text" readonly placeholder="选择物资"/>
+<%--								   <input class="form-control" id="menupidValue" name="menuPid" type="hidden"/>--%>
+								   <input class="form-control" id="sortId" type="text" placeholder="选择物资"/>
 							   </div>
 							   <label class="col-sm-1 control-label" for="ds_name">物资名称:</label>
 							   <div class="col-sm-2">
@@ -164,5 +164,5 @@
 	</body>
 	<script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>
 	<script type="text/javascript" src="./js/dictionary.js"></script>
-	<script type="text/javascript" src="${path }/view/yangchu/goods/js/menu-create.js"></script>
+	<script type="text/javascript" src="${path }/view/yangchu/goods/js/goods-create.js"></script>
 </html>

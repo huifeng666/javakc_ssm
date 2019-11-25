@@ -6,6 +6,5 @@ $(function()
 	});
 	
 	$("[name='menustate']").bootstrapSwitch();
-	
-	
+
 });

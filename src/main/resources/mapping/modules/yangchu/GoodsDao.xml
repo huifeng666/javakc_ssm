@@ -37,8 +37,8 @@
 
     <delete id="delete">
         DELETE FROM GOODS WHERE goods_id IN
-        <foreach collection="array" item="id" open="(" separator="," close= ")">
-            #{id}
+        <foreach collection="array" item="goodsId" open="(" separator="," close= ")">
+            #{goodsId}
         </foreach>
     </delete>
 
