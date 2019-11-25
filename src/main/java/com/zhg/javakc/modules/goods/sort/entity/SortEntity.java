@@ -1,6 +1,8 @@
 package com.zhg.javakc.modules.goods.sort.entity;
 
-public class SortEntity {
+import com.zhg.javakc.base.entity.BaseEntity;
+
+public class SortEntity extends BaseEntity<SortEntity> {
 
     private String sortId;
 
@@ -11,6 +13,12 @@ public class SortEntity {
     private String sortSuoxie;
 
     private String pid;
+
+    private String open;
+
+    private int order;
+
+    private String level;
 
     public String getSortId() {
         return sortId;
@@ -50,5 +58,29 @@ public class SortEntity {
 
     public void setPid(String pid) {
         this.pid = pid;
+    }
+
+    public String getOpen() {
+        return open;
+    }
+
+    public void setOpen(String open) {
+        this.open = open;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 }
