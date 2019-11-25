@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <TITLE> ZTREE DEMO - Standard Data </TITLE>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./static/css/plugins/ztree/zTreeStyle/zTreeStyle.css" type="text/css">
+    <script type="text/javascript" src="./static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./static/js/plugins/ztree/jquery.ztree.core-3.5.js"></script>
+    <SCRIPT type="text/javascript">
+        var setting = {
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        });
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+
+
+        <ul id="treeDemo" class="ztree"></ul>
+
+</BODY>
+</HTML>
