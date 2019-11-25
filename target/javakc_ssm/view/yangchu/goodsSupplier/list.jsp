@@ -6,6 +6,7 @@
 		<%@ include file="../../../common/jsp/header.jsp"%>
 	</head>
 	<body>
+
 		<div class="wrapper wrapper-content animated fadeInRight">
 			<div class="ibox float-e-margins">
 				<form id="searchForm" action="">
@@ -25,6 +26,12 @@
 	                        </button>
 		                 </div>
 	                </div>
+
+					<div class="input-append input">
+						<input class="span2" id="appendedInputButton" type="text">
+						<button class="btn" type="button">Go!</button>
+					</div>
+
 
 <%--						<div class="col-sm-4">--%>
 <%--							<input class="form-control" id="search" name="testName" value="${testEntity.testName }"type="text" placeholder="查询内容 回车搜索"/>--%>
