@@ -4,6 +4,7 @@ import com.zhg.javakc.base.entity.BaseEntity;
 
 public class TreeEntity extends BaseEntity<TreeEntity> {
 
+
     private String orgId;
     private String orgName;
     private String orgPid;
