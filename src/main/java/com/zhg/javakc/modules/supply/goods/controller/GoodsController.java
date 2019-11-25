@@ -1,11 +1,11 @@
 package com.zhg.javakc.modules.supply.goods.controller;
 
 import com.zhg.javakc.base.page.Page;
-import com.zhg.javakc.base.util.CommonUtil;
+
 import com.zhg.javakc.modules.supply.goods.entity.GoodsEntity;
 import com.zhg.javakc.modules.supply.goods.service.GoodsService;
+
 import com.zhg.javakc.modules.test.entity.TestEntity;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Random;
 
 /**
  * @Author huoyinglong
@@ -36,7 +37,6 @@ public class GoodsController {
      * @return
      * @throws Exception
      */
-
     @RequestMapping(value="/goods")
     public String query(GoodsEntity goodsEntity, ModelMap model,
                         HttpServletRequest request, HttpServletResponse response) throws Exception
@@ -45,21 +45,49 @@ public class GoodsController {
         model.put("goodsEntity", goodsEntity);
         return "yangchu/goods/list";
     }
-
     /**
      * 新增
      * @param goodsEntity
      * @return
      */
     @RequestMapping("/save")
-    public String save(GoodsEntity goodsEntity){
-        //设置ID，获取uuid
-//        goodsEntity.setGoodsId(CommonUtil.uuid());
-//        goodsService.save(goodsEntity);
+    public String save(GoodsEntity goodsEntity) {
+        //设置主键ID
+        Random random = new Random();
+        int x = random.nextInt(1000001);
+        x = x + 7000000;
+        String id = "" + x;
+        goodsEntity.setGoodsId(id);
+        goodsEntity.setGoodsUser("回风");
+        goodsService.save(goodsEntity);
         return "redirect:goods.do";
     }
-
-
-
+    /**
+     * 修改回显数据
+     * 将数据传到修改
+     */
+    @RequestMapping("/view")
+    public String view(String ids, ModelMap modelMap){
+        GoodsEntity goodsEntity =goodsService.get(ids);
+        modelMap.put("goodsEntity",goodsEntity);
+        return "yangchu/goods/update";
+    }
+    /**
+     * 修改
+     */
+    @RequestMapping("/update")
+    public String update(GoodsEntity goodsEntity){
+        goodsEntity.setGoodsUser("回风");
+        goodsService.update(goodsEntity);
+        return "redirect:goods.do";
+    }
+    /**
+     * 删除
+     */
+    @RequestMapping("/delete")
+    public String delete(String[] ids){
+        goodsService.delete(ids);
+        return "redirect:goods.do";
+    }
 
 }

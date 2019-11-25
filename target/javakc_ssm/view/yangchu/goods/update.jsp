@@ -12,7 +12,8 @@
 				<div class="col-sm-4"><input type="button" value="返回上一页" class="btn btn-success" onclick="javascript:history.back();"/></div>
 			</div>
 			<div class="ibox float-e-margins">
-				<form action="${path }/yangchu/save.do" method="post" class="form-horizontal" role="form">
+				<form action="${path }/yangchu/update.do" method="post" class="form-horizontal" role="form">
+					<input type="hidden" name="goodsId" id="goodsId" value="${goodsEntity.goodsId}">
                     <fieldset>
                         <legend>测试基本信息</legend>
                        <div class="form-group">
@@ -21,25 +22,26 @@
 								   <input class="form-control" id="menupidValue" name="menuPid" type="hidden"/>
 								   <input class="form-control" id="menupid" type="text" readonly placeholder="选择物资"/>
 							   </div>
-							   <label class="col-sm-1 control-label" for="ds_name">物资名称:</label>
+							   <label class="col-sm-1 control-label" >物资名称:</label>
 							   <div class="col-sm-2">
-								   <input class="form-control" type="text" name="goodsName" />
+								   <input class="form-control" type="text" name="goodsName"  value="${goodsEntity.goodsName}" />
 							   </div>
                        </div>
                        <div class="form-group">
                           <label class="col-sm-1 control-label" for="ds_username">物资规格:</label>
                           <div class="col-sm-2">
-                             <input class="form-control" type="text"  name="goodsGuige"/>
+                             <input class="form-control" type="text"  name="goodsGuige" value="${goodsEntity.goodsGuige}"/>
                           </div>
 						   <label class="col-sm-1 control-label" for="ds_username">物资简称:</label>
 						   <div class="col-sm-2">
-							   <input class="form-control" type="text"  name="goodsSimp"/>
+							   <input class="form-control" type="text"  name="goodsSimp" value="${goodsEntity.goodsSimp}"/>
 						   </div>
                        </div>
 						<div class="form-group">
 							<label class="col-sm-1 control-label" for="ds_username">物资简述:</label>
 							<div class="col-sm-6">
-								<textarea class="form-control" rows="3" name="goodsTxt"></textarea>
+								<textarea class="form-control" rows="3" name="goodsTxt" value="${goodsEntity.goodsTxt}">
+								</textarea>
 							</div>
 						</div>
 						<div class="form-group">
@@ -64,26 +66,26 @@
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">物资类型:</label>
 							<div class="col-sm-2">
-								<zhg:select codeTp="goodsState" name="goodsState" cls="form-control" def="true"></zhg:select>
+								<zhg:select codeTp="goodsState" name="goodsState" cls="form-control" def="true" value="${goodsEntity.goodsState}"></zhg:select>
 							</div>
 							<label class="col-sm-1 control-label">限制采购:</label>
 							<div class="col-sm-2">
 								<label class="radio-inline">
-									<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1"> 是
+									<input type="radio" name="goodsHetong" id="inlineRadio3" value="${goodsEntity.goodsHetong}"> 是
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2"> 否
+									<input type="radio" name="goodsHetong" id="inlineRadio4" value="${goodsEntity.goodsHetong}"> 否
 								</label>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-1 control-label" >物资组:</label>
 							<div class="col-sm-2">
-								<input class="form-control" type="text" name="goodsWuzizu" />
+								<input class="form-control" type="text" name="goodsWuzizu" value="${goodsEntity.goodsWuzizu}"/>
 							</div>
 							<label class="col-sm-2 control-label" >保质期:</label>
 							<div class="col-sm-1">
-								<input class="form-control" type="text" name="goodsBaozhi" />
+								<input class="form-control" type="text" name="goodsBaozhi" value="${goodsEntity.goodsBaozhi}" />
 							</div>
 							<div class="col-sm-1">
 								<select data-placeholder="" class="chosen-select"  style="width:45px; height: 30px" tabindex="2">
@@ -96,11 +98,11 @@
 						<div class="form-group">
 							<label class="col-sm-1 control-label" for="ds_name">税率</label>
 							<div class="col-sm-2">
-								<input class="form-control" type="text" name="goodsShuilv" />
+								<input class="form-control" type="text" name="goodsShuilv" value="${goodsEntity.goodsShuilv}"/>
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">基本单位</label>
 							<div class="col-sm-1">
-								<select data-placeholder="" class="chosen-select" name="goodsJiben"  style="width:60px; height: 30px" tabindex="2">
+								<select data-placeholder="" class="chosen-select" name="goodsJiben" value="value="${goodsEntity.goodsJiben}" style="width:60px; height: 30px" tabindex="2">
 									<option value="1" >千克</option>
 									<option value="2" >克</option>
 									<option value="3" >斤</option>
@@ -108,7 +110,7 @@
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">生产单位</label>
 							<div class="col-sm-1">
-								<select data-placeholder="" class="chosen-select" name="goodsShengchan" style="width:60px; height: 30px" tabindex="2">
+								<select data-placeholder="" class="chosen-select" name="goodsShengchan" value="${goodsEntity.goodsShengchan}" style="width:60px; height: 30px" tabindex="2">
 									<option value="1" >千克</option>
 									<option value="2" >克</option>
 									<option value="3" >斤</option>
@@ -118,27 +120,27 @@
 						<div class="form-group">
 							<label class="col-sm-1 control-label" for="ds_name">净重：</label>
 							<div class="col-sm-2">
-								<input class="form-control" type="text" name="goodsJingzhong" />
+								<input class="form-control" type="text" name="goodsJingzhong" value="${goodsEntity.goodsJingzhong}"/>
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">毛重：</label>
 							<div class="col-sm-2">
-								<input class="form-control" type="text" name="goodsMaozhong" />
+								<input class="form-control" type="text" name="goodsMaozhong"  value="${goodsEntity.goodsMaozhong}"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-1 control-label" for="ds_name">体积</label>
 							<div class="col-sm-1">
-								<input class="form-control" type="text" name="goodsTiji"  placeholder="长"/>
+								<input class="form-control" type="text" name="goodsTiji"  placeholder="长" value="${goodsEntity.goodsTiji}"/>
 							</div>
 							<div class="col-sm-1">
-								<input class="form-control" type="text" name="goodsTiji"  placeholder="宽"/>
+								<input class="form-control" type="text" name="goodsTiji"  placeholder="宽" value="${goodsEntity.goodsTiji}"/>
 							</div>
 							<div class="col-sm-1">
-								<input class="form-control" type="text" name="goodsTiji"  placeholder="高"/>
+								<input class="form-control" type="text" name="goodsTiji"  placeholder="高" value="${goodsEntity.goodsTiji}"/>
 							</div>
 						<label class="col-sm-1 control-label" for="ds_name">单位</label>
 						<div class="col-sm-1">
-							<select data-placeholder="" class="chosen-select" name="goodsTijidanwei" style="width:60px; height: 30px" tabindex="2">
+							<select data-placeholder="" class="chosen-select" name="goodsTijidanwei" style="width:60px; height: 30px" tabindex="2" value="${goodsEntity.goodsTijidanwei}">
 								<option value="1" >米</option>
 								<option value="2" >厘米</option>
 								<option value="3" >毫米</option>

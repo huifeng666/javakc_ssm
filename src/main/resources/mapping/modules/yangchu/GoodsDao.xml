@@ -2,10 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhg.javakc.modules.supply.goods.dao.GoodsDao">
 
-
-
-
-
     <select id="findList" resultType="com.zhg.javakc.modules.supply.goods.entity.GoodsEntity">
         SELECT  goods_id as goodsId,goods_name as goodsName,
         goods_simp as goodsSimp, goods_guige as goodsGuige,
@@ -13,38 +9,38 @@
         FROM goods WHERE 1=1
     </select>
 
+    <insert id="insert">
+        INSERT INTO GOODS (goods_id,goods_name,goods_simp,goods_guige,goods_jiben,goods_state,goods_photo,goods_fuma,
+        goods_hetong,goods_baozhi,goods_shuilv,goods_shengchan,goods_jingzhong,goods_maozhong,goods_tiji,
+        goods_tijidanwei,delflag,goods_user,goods_txt,goods_wuzizu)
+        VALUES (#{goodsId},#{goodsName},#{goodsSimp},#{goodsGuige},#{goodsJiben},#{goodsState},#{goodsPhoto},#{goodsFuma},
+        #{goodsHetong},#{goodsBaozhi},#{goodsShuilv},#{goodsShengchan},#{goodsJingzhong},#{goodsMaozhong},#{goodsTiji},
+        #{goodsTijidanwei},#{delflag},#{goodsUser},#{goodsTxt},#{goodsWuzizu})
+    </insert>
 
+    <select id="get" resultType="com.zhg.javakc.modules.supply.goods.entity.GoodsEntity">
+        SELECT goods_id as goodsId,goods_name as goodsName,goods_simp as goodsSimp,goods_guige as goodsGuige,goods_jiben as goodsJiben,
+        goods_state as goodsState,goods_fuma as goodsFuma,goods_hetong as goodsHetong,goods_baozhi as goodsBaozhi,
+        goods_shuilv as goodsShuilv,goods_shengchan as goodsShengchan,goods_jingzhong as goodsJingzhong,
+        goods_maozhong as goodsMaozhong,goods_tiji as goodsTiji,goods_tijidanwei as goodsTijidanwei,delflag as delflag,
+        goods_user as goodsUser,goods_txt as goodsTxt,goods_wuzizu as goodsWuzizu FROM GOODS WHERE goods_id=#{0}
+    </select>
 
+    <update id="update">
+        UPDATE GOODS SET goods_name=#{goodsName},goods_simp=#{goodsSimp},goods_guige=#{goodsGuige},goods_jiben=#{goodsJiben},
+        goods_state=#{goodsState},goods_fuma=#{goodsFuma},goods_hetong=#{goodsHetong},goods_baozhi=#{goodsBaozhi},
+        goods_shuilv=#{goodsShuilv},goods_shengchan=#{goodsShengchan},goods_jingzhong=#{goodsJingzhong},
+        goods_maozhong=#{goodsMaozhong},goods_tiji=#{goodsTiji},goods_tijidanwei=#{goodsTijidanwei},delflag=#{delflag},
+        goods_user=#{goodsUser},goods_txt=#{goodsTxt},goods_wuzizu=#{goodsWuzizu}
+        WHERE goods_id=#{goodsId}
+    </update>
 
-
-<!--        <if test="testName!='' and testName!=null">-->
-<!--            AND TEST_NAME LIKE  '%'||#{testName}||'%'-->
-<!--        </if>-->
-
-
-
-
-<!--    <insert id="insert">-->
-<!--        INSERT INTO DATA_TEST (TEST_ID,TEST_NAME,TEST_SEX,TEST_DATE)-->
-<!--        VALUES (#{testId},#{testName},#{testSex},#{testDate})-->
-<!--    </insert>-->
-
-<!--    <select id="get" resultType="com.zhg.javakc.modules.test.entity.TestEntity">-->
-<!--        SELECT  TEST_ID AS testId,TEST_NAME AS testName,TEST_SEX AS testSex,TEST_DATE AS testDate-->
-<!--        FROM DATA_TEST WHERE TEST_ID=#{0}-->
-<!--    </select>-->
-
-<!--    <update id="update">-->
-<!--        UPDATE DATA_TEST SET TEST_NAME=#{testName},TEST_SEX=#{testSex},TEST_DATE=#{testDate}-->
-<!--        WHERE TEST_ID=#{testId}-->
-<!--    </update>-->
-
-<!--    <delete id="delete">-->
-<!--        DELETE FROM DATA_TEST WHERE TEST_ID IN-->
-<!--        <foreach collection="array" item="id" open="(" separator="," close= ")">-->
-<!--            #{id}-->
-<!--        </foreach>-->
-<!--    </delete>-->
+    <delete id="delete">
+        DELETE FROM GOODS WHERE goods_id IN
+        <foreach collection="array" item="id" open="(" separator="," close= ")">
+            #{id}
+        </foreach>
+    </delete>
 
 
 </mapper>

@@ -17,7 +17,14 @@
                 			<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="yangchu/goods/create.jsp">
 	                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
 	                        </button>
-
+							<td>
+								<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="yangchu/view.do">
+									<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改
+								</button>
+								<button type="button" class="btn btn-danger" data-toggle="modal" id="delete" name="yangchu/delete.do">
+									<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>删除
+								</button>
+							</td>
 		                 </div>
 	                </div>
 	                <div class="col-sm-4">
@@ -30,6 +37,7 @@
 					        <thead>
 					            <tr>
 					                <th><input type="checkbox" id="checkall"/></th>
+									<th>物资编码</th>
 					                <th>物资名称</th>
 					                <th>物资简称</th>
 					                <th>规格</th>
@@ -46,6 +54,7 @@
 					        	<c:forEach var="e" items="${page.list }" varStatus="v">
 						            <tr>
 						                <td><input type="checkbox" name="ids" value="${e.goodsId }"/></td>
+										<td>${e.goodsId }</td>
 						                <td>${e.goodsName }</td>
 										<td>${e.goodsSimp }</td>
 										<td>${e.goodsGuige }</td>
@@ -54,14 +63,7 @@
 										<td><zhg:show  codeTp="goodsState" value="${e.goodsState }" /></td>
 						                <td><fmt:formatDate value="${e.updateDate}" pattern="yyyy-MM-dd"></fmt:formatDate></td>
 										<td>${e.goodsUser }</td>
-										<td>
-											<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="test/view.do">
-												<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改
-											</button>
-											<button type="button" class="btn btn-danger" data-toggle="modal" id="delete" name="test/delete.do">
-												<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>删除
-											</button>
-										</td>
+
 						            </tr>
 					            </c:forEach>
 					        </tbody>
