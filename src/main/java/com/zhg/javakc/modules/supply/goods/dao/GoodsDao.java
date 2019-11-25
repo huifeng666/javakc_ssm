@@ -10,5 +10,4 @@ import com.zhg.javakc.modules.supply.goods.entity.GoodsEntity;
  */
 public interface GoodsDao extends BaseDao<GoodsEntity> {
 
-
 }
