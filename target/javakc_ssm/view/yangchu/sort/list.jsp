@@ -8,7 +8,7 @@
 		<link href="<%=path%>/static/css/plugins/ztree/zTreeStyle/zTreeStyle.css" rel="stylesheet">
 	</head>
 
-	<script type="javascript">
+	<script language="JavaScript">
 	  $(function(){
 	  var setting = {
             data: {
@@ -19,7 +19,7 @@
         };
 
 	  $.post(root+'sort/querySort.do',function(zNodes){
-		  $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		  $.fn.zTree.init($("#tree"), setting, zNodes);
 	  },'json')
 
 	  })
@@ -30,10 +30,10 @@
 				<form id="searchForm" action="">
 				<div class="col-sm-12">
 					<!-- ------------按钮组 start------------ -->
-	                <div class="alert alert-success" role="alert">测试详细信息</div>
+	                <div class="alert alert-success" role="alert">物资分类详细信息</div>
 	                <div class="col-sm-8">
 	                	<div class="btn-group hidden-xs" role="group">
-                			<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="test/create.jsp">
+                			<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="yangchu/sort/create.jsp">
 	                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
 	                        </button>
 	                        <button type="button" class="btn btn-success" data-toggle="modal" id="update" name="test/view.do">
@@ -43,15 +43,20 @@
 	                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>删除
 	                        </button>
 		                 </div>
+
+						<div class="col-sm-4">
+							<input class="form-control" id="search" name="testName" value="${testEntity.testName }" type="text" placeholder="查询内容 回车搜索"/>
+
+						</div>
+						<!-- ------------按钮组 end------------ -->
+
+						<table class="table table-striped table-bordered table-hover table-condensed">
+							<ul id="tree" class="ztree"></ul>
+						</table>
+
 	                </div>
-	                <div class="col-sm-4">
-	                	<input class="form-control" id="search" name="testName" value="${testEntity.testName }" type="text" placeholder="查询内容 回车搜索"/>
-	                </div>
-	                 <!-- ------------按钮组 end------------ -->
-		                 <table class="table table-striped table-bordered table-hover table-condensed">
-							 <ul id="treeDemo" class="ztree"></ul>
-					    </table>
-			     </div>
+				</div>
+
 			     </form>
 			</div>
 		</div>

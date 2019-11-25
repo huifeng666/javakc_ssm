@@ -9,9 +9,9 @@
 
     <select id="querySort" resultType="java.util.HashMap">
     select GOODS_TYPE_ID "id",
-    TYPE_NAME "sortName",
+    TYPE_NAME "name",
     TYPE_PID "pId",
-    DECODE(TYPE_OPEN,0,'false',1,'true'),
+    DECODE(TYPE_OPEN,0,'false',1,'true') "open",
     TYPE_ORDER "order",
     TYPE_LEVEL "level"
     from MATERIAL_TYPE where 1=1 order by TYPE_ORDER ASC
