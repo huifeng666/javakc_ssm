@@ -47,13 +47,13 @@
 							<div class="img-preview img-preview-sm"></div>
 							<div class="btn-group">
 								<label title="上传图片" for="inputImage" class="btn btn-primary">
-									<input type="file" accept="image/*" name="file" id="inputImage" class="hide">
+									<input type="file" accept="image/*" name="file" id="inputImage" class="hide">上传照片
 								</label>
 							</div>
 						</div>
 						<legend></legend>
 						<div class="form-group">
-							<label class="col-sm-2 control-label">是否赋码:</label>
+							<label class="col-sm-1 control-label">是否赋码:</label>
 							<div class="col-sm-2">
 								<label class="checkbox-inline">
 									<input type="checkbox" value="option1" id="inlineCheckbox1">
@@ -64,22 +64,21 @@
 									否
 								</label>
 							</div>
-							<label class="col-sm-2 control-label" for="ds_name">物资类型:</label>
-							<div class="col-sm-3">
+							<label class="col-sm-1 control-label" for="ds_name">物资类型:</label>
+							<div class="col-sm-2">
 								<zhg:select codeTp="goodsState" name="goodsState" cls="form-control" def="true"></zhg:select>
 							</div>
-						</div>
-
-						<label class="col-sm-2 control-label">限制合同采购:</label>
-						<div class="col-sm-3">
-							<label class="checkbox-inline">
-								<input type="checkbox" value="option1" id="inlineCheckbox3">
-								是
-							</label>
-							<label class="checkbox-inline">
-								<input type="checkbox" value="option2" id="inlineCheckbox4">
-								否
-							</label>
+							<label class="col-sm-1 control-label">限制合同采购:</label>
+							<div class="col-sm-2">
+								<label class="checkbox-inline">
+									<input type="checkbox" value="option1" id="inlineCheckbox3">
+									是
+								</label>
+								<label class="checkbox-inline">
+									<input type="checkbox" value="option2" id="inlineCheckbox4">
+									否
+								</label>
+							</div>
 						</div>
                     </fieldset>
 

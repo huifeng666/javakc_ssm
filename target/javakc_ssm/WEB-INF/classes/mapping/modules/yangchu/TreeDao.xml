@@ -40,7 +40,7 @@
 
     <delete id="deleteOrg">
 
-        DELETE FROM COMPANY_ORG WHERE ORG_ID=#{orgId}
+         DELETE FROM COMPANY_ORG WHERE ORG_ID=#{orgId}
 
     </delete>
 </mapper>
