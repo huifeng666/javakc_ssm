@@ -3,19 +3,19 @@ $(function()
 	//设置 菜单状态 选择开关
 	$("[name='menuState']").bootstrapSwitch();
 	
-	//选择父类触发事件
-	$('#menupid').click(function()
-	{
-		layer.open({
-		  type: 2,
-		  title: '选择菜单父类',
-		  shadeClose: true,
-		  shade: 0.8,
-		  area: ['65%', '65%'],
-		  content: root+'/menu/createParent.do'
-		}); 
-	});
-	
+
+    //选择父类触发事件
+    $('#menupid').click(function()
+    {
+        layer.open({
+            type: 2,
+            title: '选择菜单父类',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['65%', '65%'],
+            content: root+'/menu/createParent.do'
+        });
+    });
 	$('form:eq(0)').bootstrapValidator({
 		excluded:[":disabled"],
 		trigger:"change",

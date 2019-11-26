@@ -14,16 +14,18 @@
                 <!-- ------------按钮组 start------------ -->
                 <div class="alert alert-success" role="alert">供应商详细信息</div>
                 <div class="form-group">
-                    <label class="col-md-1 control-label">联系人</label>
+<%--                    <label class="col-md-1 control-label"></label>--%>
                     <div class="col-md-2">
+                        <span>联系人</span>
                         <input class="form-control " id="search"  name="supplierContact"
                                value="${supplierEntity.supplierContact }" type="text"
                                placeholder="请回车搜索！！！">
                     </div>
                     <div class="col-md-2"></div>
-                    <label class="control-label col-md-1">供应商</label>
+<%--                    <label class="control-label col-md-1"></label>--%>
                     <div class="col-md-4">
-                        <input class="form-control " id="search2" name="supplierName"
+                        <span>供应商</span>
+                        <input class="form-control " id="search1" name="supplierName"
                                value="${supplierEntity.supplierName}" type="text"
                                placeholder="请回车搜索！！！">
                     </div>
@@ -73,40 +75,8 @@
                             <td><zhg:show codeTp="type" value="${e.supplierType}"/></td>
                             <td>${e.supplierContact}</td>
                             <td>${e.supplierContectnum}</td>
-                            <c:if test="${e.supplierPortal==1}">
-                                <td>
-                                    <div>
-                                        <button type="button" class=" btn btn-info btn-mini glyphicon glyphicon-ok ">
-                                        </button>
-                                    </div>
-                                </td>
-                            </c:if>
-                            <c:if test="${e.supplierPortal==0}">
-                                <td>
-                                    <div>
-                                        <button type="button"
-                                                class="  btn btn-danger btn-mini glyphicon glyphicon-remove ">
-                                        </button>
-                                    </div>
-                                </td>
-                            </c:if>
-                            <c:if test="${e.supplierContract==1}">
-                                <td>
-                                    <div>
-                                        <button type="button" class=" btn btn-info btn-mini glyphicon glyphicon-ok ">
-                                        </button>
-                                    </div>
-                                </td>
-                            </c:if>
-                            <c:if test="${e.supplierContract==0}">
-                                <td>
-                                    <div>
-                                        <button type="button"
-                                                class="  btn btn-danger btn-mini glyphicon glyphicon-remove ">
-                                        </button>
-                                    </div>
-                                </td>
-                            </c:if>
+                            <td><zhg:show value="${e.supplierPortal}" codeTp="PORTAL"></zhg:show></td>
+                            <td><zhg:show value="${e.supplierContract}" codeTp="CONTRACT"></zhg:show></td>
                         </tr>
                     </c:forEach>
                     </tbody>

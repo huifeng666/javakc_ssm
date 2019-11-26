@@ -11,7 +11,7 @@
 				<form id="searchForm" action="">
 				<div class="col-sm-12">
 					<!-- ------------按钮组 start------------ -->
-	                <div class="alert alert-success" role="alert">测试详细信息</div>
+	                <div class="alert alert-success" role="alert">测试详细信息12344</div>
 	                <div class="col-sm-8">
 	                	<div class="btn-group hidden-xs" role="group">
                 			<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="yangchu/goods/create.jsp">

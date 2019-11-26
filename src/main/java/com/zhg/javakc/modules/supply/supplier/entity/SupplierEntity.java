@@ -171,13 +171,6 @@ public class SupplierEntity extends BaseEntity<SupplierEntity> {
         this.supplierContectnum = supplierContectnum;
     }
 
-    public String getSupplierContectemall() {
-        return supplierContectemail;
-    }
-
-    public void setSupplierContectemall(String supplierContectemall) {
-        this.supplierContectemail = supplierContectemall;
-    }
 
     public int getSupplierPortal() {
         return supplierPortal;
@@ -196,4 +189,11 @@ public class SupplierEntity extends BaseEntity<SupplierEntity> {
     }
 
 
+    public String getSupplierContectemail() {
+        return supplierContectemail;
+    }
+
+    public void setSupplierContectemail(String supplierContectemail) {
+        this.supplierContectemail = supplierContectemail;
+    }
 }
