@@ -30,6 +30,15 @@ public class GoodsEntity extends BaseEntity<GoodsEntity> {
     private int sortId;//物资分类外键
     private String goodsUser;//创建人
     private int goodsState;//状态
+    private String goodsWuzizu;
+
+    public String getGoodsWuzizu() {
+        return goodsWuzizu;
+    }
+
+    public void setGoodsWuzizu(String goodsWuzizu) {
+        this.goodsWuzizu = goodsWuzizu;
+    }
 
     public String getGoodsUser() {
         return goodsUser;

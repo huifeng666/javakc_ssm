@@ -5,6 +5,7 @@ import com.zhg.javakc.base.service.BaseService;
 import com.zhg.javakc.modules.supply.goods.dao.GoodsDao;
 import com.zhg.javakc.modules.supply.goods.entity.GoodsEntity;
 
+import com.zhg.javakc.modules.system.menu.entity.MenuEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,11 @@ public class GoodsService extends BaseService<GoodsDao, GoodsEntity> {
         return page;
     }
 
+    public Page<GoodsEntity> findMenu(Page<GoodsEntity> page, GoodsEntity goodsEntity) {
+        // 执行分页查询
+        page.setList(goodsDao.findList(goodsEntity));
+        return page;
+    }
 
 
 
