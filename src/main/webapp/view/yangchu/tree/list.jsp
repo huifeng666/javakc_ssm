@@ -11,7 +11,7 @@
 	<script language="JavaScript">
 
 		$(function(){
-
+			var tree;
 			var setting = {
 				data: {
 					simpleData: {
@@ -26,9 +26,10 @@
 				tree=$.fn.zTree.init($("#tree"), setting, zNodes);
 			},'json')
 
+			//查询
 			$("#queryByOrgName").click(function(){
-                var orgName=$("#orgName").valid();
-                tree.getNodeByParam("name",orgName,"")
+                var orgName = $("#orgName").val();
+                var node = tree.getNodeByParam("name",orgName,"")
 				node.highlight=true;
                 tree.updateNode(node);
                 tree.selectNode(node);
@@ -85,7 +86,7 @@
 	                <div class="col-sm-8">
 	                	<div class="btn-group hidden-xs" role="group">
                 			<button type="button" class="btn btn-success" data-toggle="modal" id="queryByOrgName" name="">
-	                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>查询
+	                            <i class="glyphicon glyphicon-search" aria-hidden="true"></i>查询
 	                        </button>
 							<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="yangchu/tree/create.jsp">
 	                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
@@ -96,7 +97,7 @@
 	                        <button type="button" class="btn btn-danger" data-toggle="modal" id="deleteOrg" name="tree/delete.do">
 	                            <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>删除
 	                        </button>
-		                 </div>
+		                 </div>f
 
 	                <div class="col-sm-4">
 	                	<input class="form-control" id="orgName" name="orgName" value="" type="text" />

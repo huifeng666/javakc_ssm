@@ -43,4 +43,10 @@
          DELETE FROM COMPANY_ORG WHERE ORG_ID=#{orgId}
 
     </delete>
+
+    <delete id="deleteOrg2" statementType="CALLABLE">
+
+         {call delete_org(#{orgId},mode=IN,jdbcType=VARCHAR)}
+
+    </delete>
 </mapper>
