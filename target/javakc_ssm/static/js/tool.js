@@ -23,6 +23,13 @@ $(function()
 		var url = $(this).attr('name');
 		document.location.href=root+'view/'+url;
 	});
+
+	//点击展示页面添加按钮触发事件
+	// $('#updateSort').click(function()
+	// {
+	// 	var url = $(this).attr('name');
+	// 	document.location.href=root+'view/'+url;
+	// });
 	
 	//点击展示页面添加按钮触发事件
 	$('#add').click(function()
@@ -40,8 +47,18 @@ $(function()
  			$("#searchForm").attr('action', url).submit();
 		}
  	});
- 	
- 	//删除选中的节点数据
+
+	//修改选中的节点数据
+	// $('#updateSort').click(function()
+	// {
+	// 	if($.selectedCount('updateSort'))
+	// 	{
+	// 		var url = root+$(this).attr('name');
+	// 		$("#searchForm").attr('action', url).submit();
+	// 	}
+	// });
+
+	//删除选中的节点数据
 	$('#delete').click(function()
 	{
 		var url = root+$(this).attr('name');
