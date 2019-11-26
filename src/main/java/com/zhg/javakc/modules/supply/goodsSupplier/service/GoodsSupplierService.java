@@ -4,6 +4,7 @@ import com.zhg.javakc.base.page.Page;
 import com.zhg.javakc.base.service.BaseService;
 import com.zhg.javakc.modules.supply.goodsSupplier.dao.GoodsSupplierDao;
 import com.zhg.javakc.modules.supply.goodsSupplier.entity.GoodsSupplierEntity;
+import com.zhg.javakc.modules.system.menu.entity.MenuEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +27,9 @@ public class GoodsSupplierService extends BaseService<GoodsSupplierDao, GoodsSup
 
     }
 
+//    public Page<GoodsSupplierEntity> findMenu(Page<GoodsSupplierEntity> page, GoodsSupplierEntity goodsSupplierEntity) {
+//        // 执行分页查询
+//        page.setList(goodsSupplierDao.findList(goodsSupplierEntity));
+//        return page;
+//    }
 }
