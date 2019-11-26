@@ -45,6 +45,7 @@
 				id += nodes[i].id + ",";
 			}
 			if (v.length > 0 ) v = v.substring(0, v.length-1);
+			if (id.length > 0 ) id = id.substring(0, id.length-1);
 			var nodeName = $("#nodeName");
 			nodeName.attr("value", v);
 			$("#pid").val(id);
@@ -74,8 +75,8 @@
 				<div class="col-sm-4"><input type="button" value="返回上一页" class="btn btn-success" onclick="javascript:history.back();"/></div>
 			</div>
 			<div class="ibox float-e-margins">
-				<form action="${path }/test/save.do" method="post" class="form-horizontal" role="form">
-					<input type="hidden1" id="pid" name="pid" value="">
+				<form action="${path }/sort/save.do" method="post" class="form-horizontal" role="form">
+					<input type="hidden" id="pid" name="pid" value="">
                     <fieldset>
                         <legend>测试基本信息</legend>
 						<div class="form-group">

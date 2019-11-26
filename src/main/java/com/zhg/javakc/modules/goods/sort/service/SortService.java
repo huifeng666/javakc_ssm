@@ -22,7 +22,21 @@ private SortDao sortDao;
         page.setList(list);
         return page;
     }
+
     public List<Map<String,Object>> querySort(){
         return sortDao.querySort();
     }
+
+    public List<Map<String,Object>> querySortById(String sortId){
+       return sortDao.querySortById(sortId);
+    }
+
+    public void deleteSort(String sortId){
+        sortDao.deleteSort(sortId);
+    }
+
+    public void deleteSort2(String sortId){
+        sortDao.deleteSort(sortId);
+    }
+
 }
