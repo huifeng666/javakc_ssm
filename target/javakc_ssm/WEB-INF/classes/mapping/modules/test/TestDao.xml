@@ -24,7 +24,6 @@
         UPDATE DATA_TEST SET TEST_NAME=#{testName},TEST_SEX=#{testSex},TEST_DATE=#{testDate}
         WHERE TEST_ID=#{testId}
     </update>
-
     <delete id="delete">
         DELETE FROM DATA_TEST WHERE TEST_ID IN
         <foreach collection="array" item="id" open="(" separator="," close= ")">

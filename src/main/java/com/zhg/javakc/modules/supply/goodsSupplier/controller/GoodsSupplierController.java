@@ -1,6 +1,8 @@
 package com.zhg.javakc.modules.supply.goodsSupplier.controller;
 
 import com.zhg.javakc.base.page.Page;
+import com.zhg.javakc.modules.supply.goods.entity.GoodsEntity;
+import com.zhg.javakc.modules.supply.goods.service.GoodsService;
 import com.zhg.javakc.modules.supply.goodsSupplier.entity.GoodsSupplierEntity;
 
 
@@ -25,12 +27,13 @@ public class GoodsSupplierController {
     @Autowired
     private GoodsSupplierService goodsSupplierService;
 
+    @Autowired
+    private GoodsService goodsService;
     @RequestMapping("/goodsSupplier")
     public ModelAndView goodsSupplier(GoodsSupplierEntity goodsSupplierEntity, HttpServletRequest request, HttpServletResponse response){
 
         ModelAndView modelAndView=new ModelAndView("yangchu/goodsSupplier/list");
         Page<GoodsSupplierEntity> page= goodsSupplierService.query(goodsSupplierEntity,new Page<GoodsSupplierEntity>(request,response));
-
         modelAndView.addObject("page",page);
         return modelAndView;
 
@@ -42,10 +45,15 @@ public class GoodsSupplierController {
 
     }
     @RequestMapping("/queryAllgoods")
-    public String queryAllgoods(GoodsSupplierEntity goodsSupplierEntity,ModelMap model) throws Exception{
-//        model.put("page",goodsSupplierService.findList(goodsSupplierEntity));
-        return "yangchu/goods/list";
+//       model.put("page",goodsSupplierService.findList(goodsSupplierEntity));
+        public String queryAllgoods(GoodsEntity goodsEntity, ModelMap model,
+                HttpServletRequest request, HttpServletResponse response) throws Exception
+        {
+            model.put("page", goodsService.findGoods(new Page<GoodsEntity>(request, response), goodsEntity));
+            model.put("goodsEntity", goodsEntity);
+            return "yangchu/goodsSupplier/goodslist";
+        }
 
-    }
+
 
 }
