@@ -5,9 +5,8 @@
 		<title>增添物资页面</title>
 		<%@ include file="../../../common/jsp/header.jsp"%>
 		<link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
-		<link href="<%=path%>/static/css/plugins/ztree/zTreeStyle/zTreeStyle.css" rel="stylesheet">
-		<script type="text/javascript" src="<%=path%>/static/js/plugins/ztree/jquery.ztree.core-3.5.js"></script>
-
+        <script type="text/javascript" src="<%=path%>static/js/plugins/ztree/jquery.ztree.core-3.5.js"></script>
+        <link href="<%=path%>/static/css/plugins/ztree/zTreeStyle/zTreeStyle.css" rel="stylesheet">
 	</head>
 	<script language="JavaScript">
 
@@ -52,7 +51,6 @@
 			$("#idd").val(id)
 
 		}
-
 		function showMenu() {
 			var cityObj = $("#nodeName");
 			var cityOffset = $("#nodeName").offset();
@@ -69,9 +67,7 @@
 				hideMenu();
 			}
 		}
-
 	</script>
-
 	<body>
 		<div class="wrapper wrapper-content animated fadeInRight">
 			<div>
@@ -79,12 +75,13 @@
 			</div>
 			<div class="ibox float-e-margins">
 				<form action="${path }/yangchu/save.do" method="post" class="form-horizontal" role="form">
+                    <input type="hidden" name="sortId" id="idd"/>
                     <fieldset>
                         <legend>测试基本信息</legend>
                        <div class="form-group">
 						   <a id="menuBtn"  href="#" onclick="showMenu(); return false;" class="col-sm-1 control-label">物资分类</a>
 						   <div class="col-sm-2">
-							   <input class="form-control" type="text" id="nodeName" name="nodeName"  readonly/>
+							   <input class="form-control" type="text" id="nodeName"  readonly/>
 							   <div id="menuContent" class="menuContent" style="display: none;">
 								   <ul id="type" class="ztree" style="margin-top: 0; width: 160px;"></ul>
 							   </div>

@@ -28,7 +28,7 @@ public class GoodsEntity extends BaseEntity<GoodsEntity> {
     private int goodsTiji;//物资体积
     private String goodsTijidanwei;//物资体积单位
     private String delflag;//物资标记
-    private int sortId;//物资分类外键
+    private String sortId;//物资分类外键
     private String goodsUser;//创建人
     private int goodsState;//状态
     private String goodsWuzizu;
@@ -200,11 +200,11 @@ public class GoodsEntity extends BaseEntity<GoodsEntity> {
         this.delflag = delflag;
     }
 
-    public int getSortId() {
+    public String getSortId() {
         return sortId;
     }
 
-    public void setSortId(int sortId) {
+    public void setSortId(String sortId) {
         this.sortId = sortId;
     }
 }

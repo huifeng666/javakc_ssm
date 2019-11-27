@@ -46,7 +46,8 @@
         g.goods_tijidanwei,
         g.delflag,
         g.goods_user,
-        g.goods_wuzizu
+        g.goods_wuzizu,
+        g.goods_type_id
     </sql>
     <select id="findList" resultMap="goods">
         SELECT
@@ -62,10 +63,10 @@
     <insert id="insert">
         INSERT INTO GOODS (goods_id,goods_name,goods_simp,goods_guige,goods_jiben,goods_state,goods_photo,goods_fuma,
         goods_hetong,goods_baozhi,goods_shuilv,goods_shengchan,goods_jingzhong,goods_maozhong,goods_tiji,
-        goods_tijidanwei,delflag,goods_user,goods_txt,goods_wuzizu,sortEntity.type_name)
+        goods_tijidanwei,delflag,goods_user,goods_txt,goods_wuzizu,goods_type_id)
         VALUES (#{goodsId},#{goodsName},#{goodsSimp},#{goodsGuige},#{goodsJiben},#{goodsState},#{goodsPhoto},#{goodsFuma},
         #{goodsHetong},#{goodsBaozhi},#{goodsShuilv},#{goodsShengchan},#{goodsJingzhong},#{goodsMaozhong},#{goodsTiji},
-        #{goodsTijidanwei},#{delflag},#{goodsUser},#{goodsTxt},#{goodsWuzizu},#{sortEntity.sortName})
+        #{goodsTijidanwei},#{delflag},#{goodsUser},#{goodsTxt},#{goodsWuzizu},#{sortId})
     </insert>
 
     <select id="get" resultType="goods">
