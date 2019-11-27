@@ -11,24 +11,35 @@
     select GOODS_TYPE_ID "id",
     TYPE_NAME "name",
     TYPE_PID "pId",
-    DECODE(TYPE_OPEN,0,'false',1,'true') "open",
-    TYPE_ORDER "order",
-    TYPE_LEVEL "level"
+    DECODE(TYPE_OPEN,0,'false',1,'true') "sortOpen",
+    TYPE_ORDER "sortOrder",
+    TYPE_LEVEL "sortLevel"
     from MATERIAL_TYPE where 1=1 order by TYPE_ORDER ASC
     </select>
 
     <insert id="insert">
         insert into MATERIAL_TYPE(GOODS_TYPE_ID,TYPE_NAME,TYPE_PID,TYPE_OPEN,TYPE_ORDER,TYPE_LEVEL)
-        values (#{sortId},#{sortName},#{pid},#{open},#{order},#{level})
+        values (#{sortId},#{sortName},#{pid},#{sortOpen},#{sortOrder},#{sortLevel})
     </insert>
 
+<!--    <select id="get" resultType="com.zhg.javakc.modules.goods.sort.entity.SortEntity">-->
+<!--        select GOODS_TYPE_ID AS sortId,TYPE_NAME AS sortName,TYPE_PID AS pid,TYPE_OPEN AS sortOpen,TYPE_ORDER AS sortOrder,TYPE_LEVEL AS sortLevel-->
+<!--        from MATERIAL_TYPE where GOODS_TYPE_ID=#{0}-->
+<!--    </select>-->
+
     <select id="get" resultType="com.zhg.javakc.modules.goods.sort.entity.SortEntity">
-        select GOODS_TYPE_ID AS sortId,TYPE_NAME AS sortName,TYPE_PID AS pid
-        from MATERIAL_TYPE where GOODS_TYPE_ID=#{0}
+        select GOODS_TYPE_ID "id",
+        GOODS_TYPE_ID "sortId",
+    TYPE_NAME "sortName",
+    TYPE_PID "pid",
+    DECODE(TYPE_OPEN,0,'false',1,'true') "sortOpen",
+    TYPE_ORDER "sortOrder",
+    TYPE_LEVEL "sortLevel"
+    from MATERIAL_TYPE where GOODS_TYPE_ID=#{0}
     </select>
 
     <update id="update">
-        UPDATE MATERIAL_TYPE SET TYPE_NAME=#{sortName},TYPE_PID=#{pid},TYPE_OPEN=#{open},TYPE_ORDER=#{order},TYPE_LEVEL=#{level}
+        UPDATE MATERIAL_TYPE SET TYPE_NAME=#{sortName},TYPE_PID=#{pid},TYPE_OPEN=#{sortOpen},TYPE_ORDER=#{sortOrder},TYPE_LEVEL=#{sortLevel}
         WHERE GOODS_TYPE_ID=#{sortId}
     </update>
 
@@ -36,9 +47,9 @@
     select GOODS_TYPE_ID "id",
     TYPE_NAME "name",
     TYPE_PID "pId",
-    DECODE(TYPE_OPEN,0,'false',1,'true') "open",
-    TYPE_ORDER "order",
-    TYPE_LEVEL "level"
+    DECODE(TYPE_OPEN,0,'false',1,'true') "sortOpen",
+    TYPE_ORDER "sortOrder",
+    TYPE_LEVEL "sortLevel"
     from MATERIAL_TYPE where 1=1 and TYPE_PID=#{sortId} order by TYPE_ORDER ASC
     </select>
 
