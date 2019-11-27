@@ -84,14 +84,14 @@
 			  for (var i=0;i<nodes.length;i++){
 				  id = nodes[i].id;
 			  }
-			  $("#sortId1").val(id);
+			  $("#sortId").val(id);
 			  var url = root+$(this).attr('name');
 			  swal({
 				  title: "确定要更改吗?",
 				  text: "更改后将无法恢复当前记录!",
 				  type: "warning",
 				  showCancelButton: true,
-				  confirmButtonColor: "#DD6B55",
+				  confirmButtonColor: "#32a8dd",
 				  confirmButtonText: "是的, 不后悔!",
 				  cancelButtonText: "算了, 再想想!",
 				  closeOnConfirm: false,
@@ -141,9 +141,6 @@
       }
 
 
-
-
-
       function getFontCss(treeId, treeNode) {
           return (!!treeNode.highlight) ? {color:"#A60000", "font-weight":"bold"} : {color:"#333", "font-weight":"normal"};
       }
@@ -152,8 +149,9 @@
 		<div class="wrapper wrapper-content animated fadeInRight">
 			<div class="ibox float-e-margins">
 				<form id="searchForm" action="">
-                    <input type="hidden" id="sortId" name="sortId">
-					<input type="hidden" id="sortId1" name="sortId1">
+                    <input type="hidden" id="sortId" name="sortId" value="${sortEntity.sortId}">
+<%--                    <input type="hidden" id="pid" name="pid" value="${sortEntity.pid}">--%>
+<%--					<input type="hidden" id="sortId1" name="sortId1">--%>
 				<div class="col-sm-12">
 					<!-- ------------按钮组 start------------ -->
 	                <div class="alert alert-success" role="alert">物资分类详细信息</div>

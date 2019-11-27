@@ -86,14 +86,14 @@ $(function () {
                 }
             },
         // 供应商法人电话
-            supplierAddr: {
+            supplierFarenph: {
                 validators: {
                     notEmpty: {
                         message: '供应商名称不能为空！！！'
                     },
                     regexp: {
-                        regexp:
-                    }
+                        regexp:/^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/,
+}
                 }
             },
 
