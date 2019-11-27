@@ -5,7 +5,23 @@
     <title>央厨--供应商新增页面</title>
     <%@ include file="../../../common/jsp/header.jsp" %>
     <link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
+    <link href="${path }/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script type="text/javascript">
+            function showorg() {
+                var typeid=$("typeid");
+                var typeidOffset=$("#typeid").offset();
+                if (typeid!='2'){
+                $("#orgid").css({lift:typeidOffset.right + "px", top:typeidOffset.top + typeid.outerHeight() +"px"}).slideDown("fast");
+                    $("body").bind("mousedown", onBodyDown);
+                //     document.getElementById("orgid").style.display=""; //显示
+                }else if (typeid=='2') {
+                    document.getElementById("orgid").style.display="none"; //隐藏
+                }
+            }
+            
+    </script>
 </head>
+
 <body>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div>
@@ -19,13 +35,15 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label" >供应商类型</label>
                     <div class="col-sm-3">
-                        <zhg:select codeTp="type" name="supplierType" cls="form-control" def="true"></zhg:select>
+                        <zhg:select codeTp="type" id="typeid" name="supplierType" onChange="showorg();" cls="form-control" def="true"></zhg:select>
                     </div>
-                    <label class="col-sm-1 control-label" >供应商内部组织</label>
-                    <div class="col-sm-3">
-                        <input class="form-control" type="text" name="supplierOrg" placeholder="请输入">
+                    <label class="col-sm-1 control-label" style="display: none"></label>
+                    <div class="col-sm-3" >
+                        <input class="form-control" id="orgid" name="orgname" type="text" style="display: none"
+                               readonly placeholder="点击选择供应商内部组织"/>
                     </div>
                 </div>
+                <legend></legend>
                 <div class="form-group">
                     <label class="col-sm-1 control-label" >供应商名称</label>
                     <div class="col-sm-3">
@@ -36,6 +54,7 @@
                         <zhg:select codeTp="LEVEL" name="supplierLevel" cls="form-control" def="true"></zhg:select>
                     </div>
                 </div>
+                <legend></legend>
                 <div class="form-group">
                     <label class="col-sm-1 control-label" >供应商简称</label>
                     <div class="col-sm-3">
@@ -55,11 +74,12 @@
                     <div class="col-sm-3">
                         <input class="form-control" type="text" name="supplierAddr" placeholder="请输入"/>
                     </div>
-                    <label class="col-sm-1  control-label" >社会统一信任代码</label>
+                        <label class="col-sm-1  control-label" >社会统一信任代码</label>
                     <div class="col-sm-3">
                         <input class="form-control" type="text" name="supplierTrustnum" placeholder="请输入"/>
                     </div>
                 </div>
+                <legend></legend>
                 <div class="form-group">
                     <label class="col-sm-1 control-label" >联系人</label>
                     <div class="col-sm-3">
@@ -74,20 +94,21 @@
                         <input class="form-control" type="text" name="supplierContectemall" placeholder="请输入"/>
                     </div>
                 </div>
+                <legend></legend>
                 <div class="form-group">
                     <label class="col-sm-1 control-label" >启用门户</label>
                     <div class="col-sm-2">
-                        <input type="checkbox" name="supplierPortal" value="1"/>
+                        <zhg:select codeTp="PORTAL" name="supplierPortal" cls="form-control" def="true"></zhg:select>
                     </div>
-                    <label class="col-sm-1  control-label" >必须合同</label>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="supplierContract" value="1"/>
+                    <label class="col-sm-2  control-label" >必须合同</label>
+                    <div class="col-sm-2">
+                        <zhg:select codeTp="CONTRACT" name="supplierContract" cls="form-control" def="true"></zhg:select>
                     </div>
                 </div>
             </fieldset>
             <fieldset>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" ></label>
+                    <label class="col-sm-1 control-label" ></label>
                     <div class="col-sm-4">
                         <input type="submit" value="提交" class="btn btn-primary"/>
                         <input type="reset" value="重置" class="btn btn-danger" id="resetForm"/>
@@ -98,6 +119,8 @@
     </div>
 </div>
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>
 <script type="text/javascript" src="./js/dictionary.js"></script>
+<script type="text/javascript" src="${path }/view/yangchu/supplier/js/supplier-create.js"></script>
 </html>

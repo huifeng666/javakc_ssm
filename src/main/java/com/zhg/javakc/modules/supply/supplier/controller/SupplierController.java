@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Random;
@@ -51,7 +50,7 @@ public class SupplierController {
     public String view(String ids, ModelMap modelMap){
         SupplierEntity supplierEntity=supplierService.get(ids);
         modelMap.put("supplierEntity",supplierEntity);
-        return "yangchu/supplierupdate";
+        return "yangchu/supplier/update";
     }
 
     @RequestMapping("/supplierupdate")
@@ -63,6 +62,11 @@ public class SupplierController {
     public String delete(String[] ids){
         supplierService.delete(ids);
         return "redirect:supplierquery.do";
+    }
+    @RequestMapping("/suppliercreatOrg")
+    public String creatOrg (SupplierEntity supplierEntity,ModelMap modelMap) throws Exception{
+      modelMap.put("page",supplierService.findList(supplierEntity));
+        return "yangchu/tree/list";
     }
     }
 

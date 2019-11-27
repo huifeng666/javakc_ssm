@@ -1,10 +1,13 @@
 package com.zhg.javakc.modules.goods.sort.controller;
 
 import com.zhg.javakc.base.page.Page;
+import com.zhg.javakc.base.util.CommonUtil;
 import com.zhg.javakc.modules.goods.sort.entity.SortEntity;
 import com.zhg.javakc.modules.goods.sort.service.SortService;
+import com.zhg.javakc.modules.test.entity.TestEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,6 +38,48 @@ public class SortController {
     public List<Map<String,Object>> querySort(){
         List<Map<String,Object>> list = sortService.querySort();
         return list;
+    }
+
+    @RequestMapping("/save")
+    public String save(SortEntity sortEntity){
+        sortEntity.setSortId(CommonUtil.uuid());
+        sortService.save(sortEntity);
+        return "/yangchu/sort/list";
+    }
+
+    public String queryBySort(String sortName){
+        sortService.get(sortName);
+        return null;
+    }
+
+    @RequestMapping("/view")
+    public String view(String ids, ModelMap modelMap){
+       SortEntity sortEntity = sortService.get(ids);
+        modelMap.put("sortEntity",sortEntity);
+        return "yangchu/sort/update";
+    }
+
+
+    @RequestMapping("/update")
+    public String update(SortEntity sortEntity){
+        sortService.update(sortEntity);
+        return "yangchu/sort/list";
+    }
+
+    @RequestMapping("/delete")
+    public String delete(String sortId){
+        //得到当前sortId的所有子节点
+        List<Map<String,Object>> list = sortService.querySortById(sortId);
+        if (list!= null && list.size()>0){
+            for (Map<String,Object> map : list){
+                delete(map.get("id").toString());
+            }
+        }
+        else {
+            //删除当前节点
+            sortService.deleteSort(sortId);
+        }
+        return "yangchu/sort/list";
     }
 
 }
