@@ -26,7 +26,7 @@
 
         <collection property="sortEntity" ofType="com.zhg.javakc.modules.goods.sort.entity.SortEntity">
             <id property="sortId" column="GOODS_TYPE_ID"/>
-            <id property="sortName" column="GOODS_TYPE_name"/>
+            <id property="sortName" column="TYPE_NAME"/>
         </collection>
 </resultMap>
     <sql id="allGoods">
@@ -50,14 +50,12 @@
         g.goods_type_id
     </sql>
     <select id="findList" resultMap="goods">
-        SELECT
-        <!-- <include refid="all_goods"/>-->
-        g.goods_id,g.goods_name,g.goods_simp,g.goods_guige,t.TYPE_NAME,g.goods_tijidanwei,
+        SELECT g.goods_id,g.goods_name,g.goods_simp,g.goods_guige,t.TYPE_NAME,g.goods_tijidanwei,
         g.goods_state,g.goods_user,g.goods_shuilv,g.goods_jiben
         FROM goods g,MATERIAL_TYPE t WHERE 1=1 AND g.GOODS_TYPE_ID=t.GOODS_TYPE_ID
-<!--        <if test="goodsName!='' and goodsName!=null ">-->
-<!--            AND GOODS_NAME LIKE '%'||#{goodsName}||'%'-->
-<!--        </if>-->
+        <if test="goodsName!='' and goodsName!=null ">
+            AND GOODS_NAME LIKE '%'||#{goodsName}||'%'
+        </if>
     </select>
 
     <insert id="insert">

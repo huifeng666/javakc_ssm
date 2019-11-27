@@ -73,7 +73,7 @@
 			</div>
 			<div class="ibox float-e-margins">
 				<form action="${path }/yangchu/save.do" method="post" class="form-horizontal" role="form">
-                    <input type="hidden" name="sortId" id="idd"/>
+                    <input type="hidden1" name="sortId" id="idd"/>
                     <fieldset>
                         <legend>测试基本信息</legend>
                        <div class="form-group">

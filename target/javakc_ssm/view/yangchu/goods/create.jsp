@@ -9,7 +9,6 @@
         <link href="<%=path%>/static/css/plugins/ztree/zTreeStyle/zTreeStyle.css" rel="stylesheet">
 	</head>
 	<script language="JavaScript">
-
 		$(function () {
 			var setting = {
 				view: {
@@ -25,7 +24,6 @@
 					onClick: onClick
 				}
 			};
-
 			$.post(root+'sort/querySort.do',function(zNodes) {
 				$.fn.zTree.init($("#type"),setting,zNodes);
 			},'json')
@@ -75,7 +73,7 @@
 			</div>
 			<div class="ibox float-e-margins">
 				<form action="${path }/yangchu/save.do" method="post" class="form-horizontal" role="form">
-                    <input type="hidden" name="sortId" id="idd"/>
+                    <input type="hidden1" name="sortId" id="idd"/>
                     <fieldset>
                         <legend>测试基本信息</legend>
                        <div class="form-group">

@@ -13,7 +13,7 @@
 					<!-- ------------按钮组 start------------ -->
 	                <div class="alert alert-success" role="alert">测试详细信息</div>
 					<div class="col-sm-9">
-						<label class="col-sm-1 control-label" for="ds_name">物资名称</label>
+						<label class="col-sm-1 control-label" for="ds_name">修改日期</label>
 						<div class="col-sm-5">
 							<input class="form-control" id="search" name="goodsName" value="${goodsEntity.goodsName }" type="text" placeholder="查询内容 回车搜索"/>
 						</div>
@@ -23,7 +23,7 @@
 					<div class="col-sm-9">
 					     <label class="col-sm-1 control-label" for="ds_name">物资分类</label>
 						<div class="col-sm-4">
-							<input class="form-control" id="search" name="sortName" value="${sortEntity.sortName }" type="text" placeholder="查询内容 回车搜索"/>
+							<input class="form-control" id="sortName" name="sortName" value="${sortEntity.sortName }" type="text" placeholder="查询内容 回车搜索"/>
 						</div>
 						<label class="col-sm-1 control-label" for="ds_name" >物资状态</label>
 						<div >
@@ -36,12 +36,12 @@
 					<div class="col-sm-9">
 						<label class="col-sm-1 control-label" for="ds_name">物资名称</label>
 						<div class="col-sm-3">
-							<input class="form-control" id="search" name="goodsName" value="${goodsEntity.goodsName }" type="text" placeholder="查询内容 回车搜索"/>
+							<input class="form-control" id="goodsName" name="goodsName" value="${goodsEntity.goodsName }" type="text" placeholder="查询内容 回车搜索"/>
 						</div>
 						<label class="col-sm-1 control-label" for="ds_name" >物资简称</label>
 						<div >
 							<div class="col-sm-4">
-								<input class="form-control" id="search" name="goodsName" value="${goodsEntity.goodsName }" type="text" placeholder="查询内容 回车搜索"/>
+								<input class="form-control" id="goodsSimp" name="goodsSimp" value="${goodsEntity.goodsSimp }" type="text" placeholder="查询内容 回车搜索"/>
 							</div>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 										<td>${e.goodsSimp }</td>
 										<td>${e.goodsGuige }</td>
 										<td>${e.goodsShuilv}</td>
-										<td>${e.sortEntity.TYPE_NAME}</td>
+										<td>${e.sortEntity.sortName}</td>
 										<td>${e.goodsJiben}</td>
 										<td><zhg:show  codeTp="goodsState" value="${e.goodsState }" /></td>
 						                <td><fmt:formatDate value="${e.updateDate}" pattern="yyyy-MM-dd"></fmt:formatDate></td>

@@ -20,7 +20,7 @@
 							   <label class="col-sm-1 control-label" for="menupid">物资分类</label>
 							   <div class="col-sm-2">
 								   <input class="form-control" id="menupidValue" name="menuPid" type="hidden"/>
-								   <input class="form-control" id="menupid" type="text" readonly placeholder="选择物资"/>
+								   <input class="form-control" id="menupid" type="text" name="sortEntity.sortName" value="${goodsEntity.sortEntity.sortName}"  readonly placeholder="选择物资"/>
 							   </div>
 							   <label class="col-sm-1 control-label" >物资名称:</label>
 							   <div class="col-sm-2">
