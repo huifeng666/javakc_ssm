@@ -19,7 +19,7 @@
 							   <label class="col-sm-1 control-label">物资分类</label>
 							   <div class="col-sm-2">
 <%--								   <input class="form-control" id="menupidValue" name="menuPid" type="hidden"/>--%>
-								   <input class="form-control" id="sortId" type="text" placeholder="选择物资"/>
+								   <input class="form-control" id="sortId" name="sortEntity.sortName" type="text" placeholder="选择物资"/>
 							   </div>
 							   <label class="col-sm-1 control-label" for="ds_name">物资名称:</label>
 							   <div class="col-sm-2">
@@ -56,10 +56,10 @@
 							<label class="col-sm-1 control-label">是否赋码:</label>
 							<div class="col-sm-2">
 								<label class="radio-inline">
-									<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 是
+									<input type="radio" name="goodsFuma"  value="1"> 是
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 否
+									<input type="radio" name="goodsFuma"  value="2"> 否
 								</label>
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">物资类型:</label>
@@ -69,10 +69,10 @@
 							<label class="col-sm-1 control-label">限制采购:</label>
 							<div class="col-sm-2">
 								<label class="radio-inline">
-									<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1"> 是
+									<input type="radio" name="goodsHetong" value="1"> 是
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2"> 否
+									<input type="radio" name="goodsHetong" value="2"> 否
 								</label>
 							</div>
 						</div>
@@ -82,15 +82,8 @@
 								<input class="form-control" type="text" name="goodsWuzizu" />
 							</div>
 							<label class="col-sm-2 control-label" >保质期:</label>
-							<div class="col-sm-1">
-								<input class="form-control" type="text" name="goodsBaozhi" />
-							</div>
-							<div class="col-sm-1">
-								<select data-placeholder="" class="chosen-select"  style="width:45px; height: 30px" tabindex="2">
-									<option value="1" >日</option>
-									<option value="2" >月</option>
-									<option value="3" >年</option>
-								</select>
+							<div class="col-sm-3">
+								<input class="form-control" type="text" name="goodsBaozhi" placeholder="请输入保质期" />
 							</div>
 						</div>
 						<div class="form-group">
@@ -99,30 +92,22 @@
 								<input class="form-control" type="text" name="goodsShuilv" />
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">基本单位</label>
-							<div class="col-sm-1">
-								<select data-placeholder="" class="chosen-select" name="goodsJiben"  style="width:60px; height: 30px" tabindex="2">
-									<option value="1" >千克</option>
-									<option value="2" >克</option>
-									<option value="3" >斤</option>
-								</select>
+							<div class="col-sm-2">
+								<input class="form-control" type="text" name="goodsJiben"  placeholder="填写单位名称"/>
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">生产单位</label>
-							<div class="col-sm-1">
-								<select data-placeholder="" class="chosen-select" name="goodsShengchan" style="width:60px; height: 30px" tabindex="2">
-									<option value="1" >千克</option>
-									<option value="2" >克</option>
-									<option value="3" >斤</option>
-								</select>
+							<div class="col-sm-2">
+								<input class="form-control" type="text" name="goodsShengchan"  placeholder="填写单位名称"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-1 control-label" for="ds_name">净重：</label>
 							<div class="col-sm-2">
-								<input class="form-control" type="text" name="goodsJingzhong" />
+								<input class="form-control" type="text" name="goodsJingzhong" placeholder="填写净重" />
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">毛重：</label>
 							<div class="col-sm-2">
-								<input class="form-control" type="text" name="goodsMaozhong" />
+								<input class="form-control" type="text" name="goodsMaozhong" placeholder="填写毛重" />
 							</div>
 						</div>
 						<div class="form-group">
@@ -137,13 +122,9 @@
 								<input class="form-control" type="text" name="goodsTiji"  placeholder="高"/>
 							</div>
 						<label class="col-sm-1 control-label" for="ds_name">单位</label>
-						<div class="col-sm-1">
-							<select data-placeholder="" class="chosen-select" name="goodsTijidanwei" style="width:60px; height: 30px" tabindex="2">
-								<option value="1" >米</option>
-								<option value="2" >厘米</option>
-								<option value="3" >毫米</option>
-							</select>
-						</div>
+							<div class="col-sm-1">
+								<input class="form-control" type="text" name="goodsTijidanwei"  placeholder="单位"/>
+							</div>
 						</div>
 					</fieldset>
                     <fieldset>

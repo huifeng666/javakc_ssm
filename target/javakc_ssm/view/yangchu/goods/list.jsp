@@ -17,15 +17,13 @@
 						<div class="col-sm-5">
 							<input class="form-control" id="search" name="goodsName" value="${goodsEntity.goodsName }" type="text" placeholder="查询内容 回车搜索"/>
 						</div>
-						<button type="button" class="btn btn-success">当日
-						</button>
-						<button type="button" class="btn btn-danger">近一月
-						</button>
+						<button type="button" class="btn btn-success">当日</button>
+						<button type="button" class="btn btn-danger">近一月</button>
 					</div>
 					<div class="col-sm-9">
 					     <label class="col-sm-1 control-label" for="ds_name">物资分类</label>
 						<div class="col-sm-4">
-							<input class="form-control" id="search" name="goodsName" value="${goodsEntity.goodsName }" type="text" placeholder="查询内容 回车搜索"/>
+							<input class="form-control" id="search" name="sortName" value="${sortEntity.sortName }" type="text" placeholder="查询内容 回车搜索"/>
 						</div>
 						<label class="col-sm-1 control-label" for="ds_name" >物资状态</label>
 						<div >
@@ -47,7 +45,6 @@
 							</div>
 						</div>
 					</div>
-
 	                <div class="col-sm-10">
 	                	<div class="btn-group hidden-xs" role="group">
                 			<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="yangchu/goods/create.jsp">
@@ -63,7 +60,6 @@
 							</td>
 		                 </div>
 	                </div>
-
 	                 <!--------------按钮组 end-------------->
 						<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 						<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
@@ -75,6 +71,7 @@
 					                <th>物资名称</th>
 					                <th>物资简称</th>
 					                <th>规格</th>
+					                <th>税率</th>
 					                <th>物资分类</th>
 					                <th>基本单位</th>
 					                <th>状态</th>
@@ -92,16 +89,17 @@
 						                <td>${e.goodsName }</td>
 										<td>${e.goodsSimp }</td>
 										<td>${e.goodsGuige }</td>
-										<td>${e.goodsGuige}</td>
-										<td><zhg:show  codeTp="goodsJiben" value="${e.goodsJiben }"/> </td>
+										<td>${e.goodsShuilv}</td>
+										<td>${e.sortEntity.TYPE_NAME}</td>
+										<td>${e.goodsJiben}</td>
 										<td><zhg:show  codeTp="goodsState" value="${e.goodsState }" /></td>
 						                <td><fmt:formatDate value="${e.updateDate}" pattern="yyyy-MM-dd"></fmt:formatDate></td>
 										<td>${e.goodsUser }</td>
-										<td>复制
-											停用
-											单位转换
+										<td>
+											<button type="button" class="btn btn-success">复制</button>
+											<button type="button" class="btn btn-danger">停用</button>
+											<button type="button" class="btn btn-primary">单位转化</button>
 										</td>
-
 						            </tr>
 					            </c:forEach>
 					        </tbody>

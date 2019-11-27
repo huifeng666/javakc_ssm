@@ -1,6 +1,7 @@
 package com.zhg.javakc.modules.supply.goods.entity;
 
 import com.zhg.javakc.base.entity.BaseEntity;
+import com.zhg.javakc.modules.goods.sort.entity.SortEntity;
 
 
 /**
@@ -31,6 +32,15 @@ public class GoodsEntity extends BaseEntity<GoodsEntity> {
     private String goodsUser;//创建人
     private int goodsState;//状态
     private String goodsWuzizu;
+    private SortEntity sortEntity;//物资分类的实体类
+
+    public SortEntity getSortEntity() {
+        return sortEntity;
+    }
+
+    public void setSortEntity(SortEntity sortEntity) {
+        this.sortEntity = sortEntity;
+    }
 
     public String getGoodsWuzizu() {
         return goodsWuzizu;

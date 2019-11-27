@@ -2,23 +2,73 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhg.javakc.modules.supply.goods.dao.GoodsDao">
 
-    <select id="findList" resultType="com.zhg.javakc.modules.supply.goods.entity.GoodsEntity">
-        SELECT  goods_id as goodsId,goods_name as goodsName,
-        goods_simp as goodsSimp, goods_guige as goodsGuige,
-        goods_jiben as goodsJiben,goods_state as goodsState,goods_user as goodsUser
-        FROM goods WHERE 1=1
+<resultMap id="goods" type="goods">
+    <id property="goodsId" column="goods_id"></id>
+    <result property="goodsName" column="goods_name"/>
+    <result property="goodsSimp" column="goods_simp"/>
+    <result property="goodsGuige" column="goods_guige"/>
+    <result property="goodsJiben" column="goods_jiben"/>
+    <result property="goodsState" column="goods_state"/>
+    <result property="goodsPhoto" column="goods_photo"/>
+    <result property="goodsFuma" column="goods_fuma"/>
+    <result property="goodsHetong" column="goods_hetong"/>
+    <result property="goodsBaozhi" column="goods_baozhi"/>
+    <result property="goodsShuilv" column="goods_shuilv"/>
+    <result property="goodsShengchan" column="goods_shengchan"/>
+    <result property="goodsJingzhong" column="goods_jingzhong"/>
+    <result property="goodsMaozhong" column="goods_maozhong"/>
+    <result property="goodsTiji" column="goods_tiji"/>
+    <result property="goodsTijidanwei" column="goods_tijidanwei"/>
+    <result property="delflag" column="delflag"/>
+    <result property="goodsUser" column="goods_user"/>
+    <result property="goodsTxt" column="goods_txt"/>
+    <result property="goodsWuzizu" column="goods_wuzizu"/>
+
+        <collection property="sortEntity" ofType="com.zhg.javakc.modules.goods.sort.entity.SortEntity">
+            <id property="sortId" column="GOODS_TYPE_ID"/>
+            <id property="sortName" column="GOODS_TYPE_name"/>
+        </collection>
+</resultMap>
+    <sql id="allGoods">
+        g.goods_id,
+        g.goods_name,
+        g.goods_simp,
+        g.goods_guige,
+        g.goods_jiben,
+        g.goods_state,
+        g.goods_photo,
+        g.goods_hetong,
+        g.goods_baozhi,
+        g.goods_shuilv,
+        g.goods_shengchan,
+        g.goods_jingzhong,
+        g.goods_maozhong,
+        g.goods_tijidanwei,
+        g.delflag,
+        g.goods_user,
+        g.goods_wuzizu
+    </sql>
+    <select id="findList" resultMap="goods">
+        SELECT
+        <!-- <include refid="all_goods"/>-->
+        g.goods_id,g.goods_name,g.goods_simp,g.goods_guige,t.TYPE_NAME,g.goods_tijidanwei,
+        g.goods_state,g.goods_user,g.goods_shuilv,g.goods_jiben
+        FROM goods g,MATERIAL_TYPE t WHERE 1=1 AND g.GOODS_TYPE_ID=t.GOODS_TYPE_ID
+<!--        <if test="goodsName!='' and goodsName!=null ">-->
+<!--            AND GOODS_NAME LIKE '%'||#{goodsName}||'%'-->
+<!--        </if>-->
     </select>
 
     <insert id="insert">
         INSERT INTO GOODS (goods_id,goods_name,goods_simp,goods_guige,goods_jiben,goods_state,goods_photo,goods_fuma,
         goods_hetong,goods_baozhi,goods_shuilv,goods_shengchan,goods_jingzhong,goods_maozhong,goods_tiji,
-        goods_tijidanwei,delflag,goods_user,goods_txt,goods_wuzizu)
+        goods_tijidanwei,delflag,goods_user,goods_txt,goods_wuzizu,sortEntity.type_name)
         VALUES (#{goodsId},#{goodsName},#{goodsSimp},#{goodsGuige},#{goodsJiben},#{goodsState},#{goodsPhoto},#{goodsFuma},
         #{goodsHetong},#{goodsBaozhi},#{goodsShuilv},#{goodsShengchan},#{goodsJingzhong},#{goodsMaozhong},#{goodsTiji},
-        #{goodsTijidanwei},#{delflag},#{goodsUser},#{goodsTxt},#{goodsWuzizu})
+        #{goodsTijidanwei},#{delflag},#{goodsUser},#{goodsTxt},#{goodsWuzizu},#{sortEntity.sortName})
     </insert>
 
-    <select id="get" resultType="com.zhg.javakc.modules.supply.goods.entity.GoodsEntity">
+    <select id="get" resultType="goods">
         SELECT goods_id as goodsId,goods_name as goodsName,goods_simp as goodsSimp,goods_guige as goodsGuige,goods_jiben as goodsJiben,
         goods_state as goodsState,goods_fuma as goodsFuma,goods_hetong as goodsHetong,goods_baozhi as goodsBaozhi,
         goods_shuilv as goodsShuilv,goods_shengchan as goodsShengchan,goods_jingzhong as goodsJingzhong,
