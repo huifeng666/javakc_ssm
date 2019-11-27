@@ -6,7 +6,22 @@
     <%@ include file="../../../common/jsp/header.jsp" %>
     <link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
     <link href="${path }/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script type="text/javascript">
+            function showorg() {
+                var typeid=$("typeid");
+                var typeidOffset=$("#typeid").offset();
+                if (typeid!='2'){
+                $("#orgid").css({lift:typeidOffset.right + "px", top:typeidOffset.top + typeid.outerHeight() +"px"}).slideDown("fast");
+                    $("body").bind("mousedown", onBodyDown);
+                //     document.getElementById("orgid").style.display=""; //显示
+                }else if (typeid=='2') {
+                    document.getElementById("orgid").style.display="none"; //隐藏
+                }
+            }
+            
+    </script>
 </head>
+
 <body>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div>
@@ -20,11 +35,12 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label" >供应商类型</label>
                     <div class="col-sm-3">
-                        <zhg:select codeTp="type" name="supplierType" cls="form-control" def="true"></zhg:select>
+                        <zhg:select codeTp="type" id="typeid" name="supplierType" onChange="showorg();" cls="form-control" def="true"></zhg:select>
                     </div>
-                    <label class="col-sm-1 control-label" >供应商内部组织</label>
-                    <div class="col-sm-3">
-                        <input class="form-control" id="orgid" name="orgname" type="text" readonly placeholder="点击选择供应商内部组织"/>
+                    <label class="col-sm-1 control-label" style="display: none"></label>
+                    <div class="col-sm-3" >
+                        <input class="form-control" id="orgid" name="orgname" type="text" style="display: none"
+                               readonly placeholder="点击选择供应商内部组织"/>
                     </div>
                 </div>
                 <legend></legend>
@@ -58,7 +74,7 @@
                     <div class="col-sm-3">
                         <input class="form-control" type="text" name="supplierAddr" placeholder="请输入"/>
                     </div>
-                    <label class="col-sm-1  control-label" >社会统一信任代码</label>
+                        <label class="col-sm-1  control-label" >社会统一信任代码</label>
                     <div class="col-sm-3">
                         <input class="form-control" type="text" name="supplierTrustnum" placeholder="请输入"/>
                     </div>
