@@ -47,15 +47,12 @@ public class SortController {
         return "/yangchu/sort/list";
     }
 
-    public String queryBySort(String sortName){
-        sortService.get(sortName);
-        return null;
-    }
-
     @RequestMapping("/view")
-    public String view(String ids, ModelMap modelMap){
-       SortEntity sortEntity = sortService.get(ids);
+    public String view(String sortId, ModelMap modelMap){
+       SortEntity sortEntity = sortService.get(sortId);
+        System.out.println(sortEntity.getSortName());
         modelMap.put("sortEntity",sortEntity);
+
         return "yangchu/sort/update";
     }
 

@@ -48,11 +48,11 @@
 					name = nodes[i].name;
 				}
 
-				$("#orgid").val(id);
-				var ids = $('#orgid').val()
+				$("#orgId").val(id);
+				var ids = $('#orgId').val()
 
-				parent.$('#orgid').val(name);
-				parent.$('#orgidtree').val(ids);
+				parent.$('#orgid2').val(name);
+				parent.$('#orgidSpace').val(ids);
 				parent.layer.close(index);
 
 			}
@@ -107,10 +107,10 @@
 <div class="wrapper wrapper-content animated fadeInRight">
 	<div class="ibox float-e-margins">
 		<form id="searchForm" action="">
-			<input type="hidden" id="orgId" name="orgId">
+			<input type="text" id="orgId" name="orgId">
 			<div class="col-sm-12">
 				<!-- ------------按钮组 start------------ -->
-				<div class="alert alert-success" role="alert">西贝集团--组织详细信息</div>
+				<div class="alert alert-success" role="alert">测试详细信息</div>
 
 					<div class="col-sm-4" role="group">
 						<input type="text" class="span search-query "id="nodeName" name="nodeName" >

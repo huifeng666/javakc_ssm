@@ -20,7 +20,7 @@
 							   <label class="col-sm-1 control-label" for="menupid">物资分类</label>
 							   <div class="col-sm-2">
 								   <input class="form-control" id="menupidValue" name="menuPid" type="hidden"/>
-								   <input class="form-control" id="menupid" type="text" readonly placeholder="选择物资"/>
+								   <input class="form-control" id="menupid" type="text" name="sortEntity.sortName" value="${goodsEntity.sortEntity.sortName}"  readonly placeholder="选择物资"/>
 							   </div>
 							   <label class="col-sm-1 control-label" >物资名称:</label>
 							   <div class="col-sm-2">
@@ -55,27 +55,35 @@
 						</div>
 						<legend></legend>
 						<div class="form-group">
-							<label class="col-sm-1 control-label">是否赋码:</label>
-							<div class="col-sm-2">
-								<label class="radio-inline">
-									<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 是
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 否
-								</label>
+							<label class="col-sm-2 control-label" >是否赋码:</label>
+							<div class="col-sm-1" >
+								<c:choose>
+									<c:when test="${goodsEntity.goodsFuma==1}">
+										<input type="radio" value="1"   name="goodsFuma" checked />是
+										<input type="radio"   value="2"  name="goodsFuma" />否
+									</c:when>
+									<c:when test="${goodsEntity.goodsFuma==2}">
+										<input type="radio" value="1"  name="goodsFuma" />是
+										<input type="radio" value="2"  name="goodsFuma" checked />否
+									</c:when>
+								</c:choose>
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">物资类型:</label>
 							<div class="col-sm-2">
 								<zhg:select codeTp="goodsState" name="goodsState" cls="form-control" def="true" value="${goodsEntity.goodsState}"></zhg:select>
 							</div>
 							<label class="col-sm-1 control-label">限制采购:</label>
-							<div class="col-sm-2">
-								<label class="radio-inline">
-									<input type="radio" name="goodsHetong" id="inlineRadio3" value="${goodsEntity.goodsHetong}"> 是
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="goodsHetong" id="inlineRadio4" value="${goodsEntity.goodsHetong}"> 否
-								</label>
+							<div class="col-sm-2" >
+								<c:choose>
+									<c:when test="${goodsEntity.goodsHetong==1}">
+										<input type="radio" value="1"   name="goodsHetong" checked />是
+										<input type="radio"   value="2"  name="goodsHetong" />否
+									</c:when>
+									<c:when test="${goodsEntity.goodsHetong==2}">
+										<input type="radio" value="1"  name="goodsHetong" />是
+										<input type="radio" value="2"  name="goodsHetong" checked />否
+									</c:when>
+								</c:choose>
 							</div>
 						</div>
 						<div class="form-group">
@@ -84,15 +92,8 @@
 								<input class="form-control" type="text" name="goodsWuzizu" value="${goodsEntity.goodsWuzizu}"/>
 							</div>
 							<label class="col-sm-2 control-label" >保质期:</label>
-							<div class="col-sm-1">
+							<div class="col-sm-2">
 								<input class="form-control" type="text" name="goodsBaozhi" value="${goodsEntity.goodsBaozhi}" />
-							</div>
-							<div class="col-sm-1">
-								<select data-placeholder="" class="chosen-select"  style="width:45px; height: 30px" tabindex="2">
-									<option value="1" >日</option>
-									<option value="2" >月</option>
-									<option value="3" >年</option>
-								</select>
 							</div>
 						</div>
 						<div class="form-group">
@@ -102,19 +103,11 @@
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">基本单位</label>
 							<div class="col-sm-1">
-								<select data-placeholder="" class="chosen-select" name="goodsJiben" value="value="${goodsEntity.goodsJiben}" style="width:60px; height: 30px" tabindex="2">
-									<option value="1" >千克</option>
-									<option value="2" >克</option>
-									<option value="3" >斤</option>
-								</select>
+								<input class="form-control" type="text" name="goodsJiben" value="${goodsEntity.goodsJiben}"/>
 							</div>
 							<label class="col-sm-1 control-label" for="ds_name">生产单位</label>
 							<div class="col-sm-1">
-								<select data-placeholder="" class="chosen-select" name="goodsShengchan" value="${goodsEntity.goodsShengchan}" style="width:60px; height: 30px" tabindex="2">
-									<option value="1" >千克</option>
-									<option value="2" >克</option>
-									<option value="3" >斤</option>
-								</select>
+								<input class="form-control" type="text" name="goodsShengchan" value="${goodsEntity.goodsShengchan}"/>
 							</div>
 						</div>
 						<div class="form-group">
@@ -139,13 +132,9 @@
 								<input class="form-control" type="text" name="goodsTiji"  placeholder="高" value="${goodsEntity.goodsTiji}"/>
 							</div>
 						<label class="col-sm-1 control-label" for="ds_name">单位</label>
-						<div class="col-sm-1">
-							<select data-placeholder="" class="chosen-select" name="goodsTijidanwei" style="width:60px; height: 30px" tabindex="2" value="${goodsEntity.goodsTijidanwei}">
-								<option value="1" >米</option>
-								<option value="2" >厘米</option>
-								<option value="3" >毫米</option>
-							</select>
-						</div>
+							<div class="col-sm-1">
+								<input class="form-control" type="text" name="goodsTijidanwei"  value="${goodsEntity.goodsTijidanwei}" placeholder="单位"/>
+							</div>
 						</div>
 					</fieldset>
                     <fieldset>

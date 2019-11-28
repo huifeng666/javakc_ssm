@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.supply.goodsSupplier.dao.GoodsSupplierDao">
+
+    <resultMap id="GoodsSupplier" type="GoodsSupplier">
+    <id property="goodssupplierId" column="GOODS_SUPPLIER_ID"/>
+    <id property="goodsorgName" column="GOODS_ORG_NAME"/>
+
+        <collection property="goodsEntity" ofType="com.zhg.javakc.modules.supply.goods.entity.GoodsEntity">
+        <id property="goodsId" column="GOODS_ID"></id>
+        <result property="goodsName" column="GOODS_NAME" />
+            <result property="goodsShuilv" column="GOODS_SHUILV" />
+        </collection>
+
+        <collection property="supplierEntity" ofType="com.zhg.javakc.modules.supply.supplier.entity.SupplierEntity">
+            <id property="supplierId" column="SUPPLIER_ID"></id>
+            <result property="supplierName" column="SUPPLIER_NAME" />
+        </collection>
+
+        <collection property="treeEntity" ofType="com.zhg.javakc.modules.supply.tree.entity.TreeEntity">
+            <id property="orgId" column="ORG_ID"></id>
+            <result property="orgName" column="ORG_NAME" />
+        </collection>
+    </resultMap>
+
+    <select id="findList" resultMap="GoodsSupplier">
+        select GOODS_SUPPLIER_ID,goods_name,org_name,supplier_name,goods_org_name,goods_shuilv from supplier s ,goods g,goods_supplier gs,company_org c where s.supplier_id=gs.supplier_id and
+        g.goods_id=gs.goods_id and c.org_id=gs.org_id
+    </select>
+
+    <insert id="insert">
+        INSERT INTO GOODS_SUPPLIER(GOODS_SUPPLIER_ID,GOODS_ID,SUPPLIER_ID,ORG_ID,GOODS_ORG_NAME) VALUES
+        (#{goodssupplierId},#{goodsId},#{supplierId},#{orgId},#{goodsorgName})
+    </insert>
+
+    <select id="get" resultMap="GoodsSupplier">
+         select goods_name,org_name,supplier_name,goods_org_name,goods_shuilv from supplier s ,goods g,goods_supplier gs,company_org c where s.supplier_id=gs.supplier_id and
+        g.goods_id=gs.goods_id and c.org_id=gs.org_id and GOODS_SUPPLIER_ID=#{0}
+    </select>
+</mapper>
+

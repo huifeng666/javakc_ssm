@@ -5,7 +5,11 @@
 		<title>菜单添加页面</title>
 		<%@ include file="../../../common/jsp/header.jsp"%>
 		<link href="<%=path%>static/css/plugins/bootstrap-switch/bootstrap-switch.min.css" rel="stylesheet">
+
 	</head>
+	<script language="JavaScript">
+
+	</script>
 	<body>
 		<div class="wrapper wrapper-content animated fadeInRight">
 			<div>

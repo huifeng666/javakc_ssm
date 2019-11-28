@@ -18,7 +18,7 @@ $(function()
     });
 	$('form:eq(0)').bootstrapValidator({
 		excluded:[":disabled"],
-		trigger:"change",
+        trigger:"change",
     	feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',

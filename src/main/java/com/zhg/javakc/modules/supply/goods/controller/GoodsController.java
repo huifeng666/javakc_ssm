@@ -42,7 +42,7 @@ public class GoodsController {
         model.put("page", goodsService.findGoods(new Page<GoodsEntity>(request, response), goodsEntity));
         model.put("goodsEntity", goodsEntity);
         return "yangchu/goods/list";
-    }
+}
     /**
      * 新增
      * @param goodsEntity
@@ -56,7 +56,7 @@ public class GoodsController {
         x = x + 7000000;
         String id = "" + x;
         goodsEntity.setGoodsId(id);
-        goodsEntity.setGoodsUser("回风");
+        goodsEntity.setGoodsUser("回峰");
         goodsService.save(goodsEntity);
         return "redirect:goods.do";
     }
@@ -75,7 +75,7 @@ public class GoodsController {
      */
     @RequestMapping("/update")
     public String update(GoodsEntity goodsEntity){
-        goodsEntity.setGoodsUser("回风");
+        goodsEntity.setGoodsUser("回峰");
         goodsService.update(goodsEntity);
         return "redirect:goods.do";
     }

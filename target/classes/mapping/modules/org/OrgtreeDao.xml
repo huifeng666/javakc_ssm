@@ -8,7 +8,9 @@
 		<result property="pid" column="org_tree_pid"/>
 		<result property="level" column="org_tree_level"/>
 	</resultMap>
-	
+
+
+
 	<select id="findList" resultMap="orgtreeMap">
 		select org_tree_id, org_tree_name, org_tree_pid, org_tree_level from ahsydw_org_tree
 	</select>   

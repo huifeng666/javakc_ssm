@@ -101,7 +101,7 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label" ></label>
                     <div class="col-sm-4">
-                        <input type="submit" value="提交" id="submit" class="btn btn-primary"/>
+                        <input type="submit" value="提交" class="btn btn-primary"/>
                         <input type="reset" value="重置" class="btn btn-danger" id="resetForm"/>
                     </div>
                 </div>
