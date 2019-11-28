@@ -4,7 +4,7 @@
 	<head>
 		<title>关系添加页面</title>
 		<%@ include file="../../../common/jsp/header.jsp" %>
-		<link href="${path }/static/css/plugins/treegrid/jquery.treegrid.css" rel="stylesheet">
+<%--		<link href="${path }/static/css/plugins/treegrid/jquery.treegrid.css" rel="stylesheet">--%>
 	</head>
 	<body>
 		<div class="wrapper wrapper-content animated fadeInRight">
@@ -38,12 +38,6 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="roleremark">税率</label>
-							<div class="col-sm-10">
-								<input class="form-control" id="roleremark3" name="roleRemark" type="text" placeholder="填写税率"/>
-							</div>
-						</div>
-						<div class="form-group">
 							<label class="col-sm-2 control-label" for="roleremark">收货组织名称</label>
 							<div class="col-sm-10">
 								<input class="form-control" id="orgidSpace" />
@@ -70,6 +64,6 @@
 	<script type="text/javascript" src="${path }/static/js/plugins/treegrid/jquery.treegrid.min.js"></script>
 	<script type="text/javascript" src="${path }/static/js/plugins/treegrid/jquery.treegrid.bootstrap3.js"></script>
 <%--	<script type="text/javascript" src="${path }/view/system/role/js/role.js"></script>--%>
-	<script type="text/javascript" src="${path }/static/js/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
+<%--	<script type="text/javascript" src="${path }/static/js/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>--%>
 	<script type="text/javascript" src="${path }/view/yangchu/goodsSupplier/js/goodsSupplier-create.js"></script>
 </html>

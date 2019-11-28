@@ -29,6 +29,7 @@
 		<typeAlias type="com.zhg.javakc.modules.dictionary.entity.DictionaryEntity" alias="dictionary" />
 		<typeAlias type="com.zhg.javakc.modules.org.tree.entity.OrgtreeEntity" alias="orgtree" />
 		<typeAlias type="com.zhg.javakc.modules.supply.supplier.entity.SupplierEntity" alias="supplier" />
+		<typeAlias type="com.zhg.javakc.modules.supply.goodsSupplier.entity.GoodsSupplierEntity" alias="GoodsSupplier" />
 		<typeAlias type="com.zhg.javakc.modules.supply.goods.entity.GoodsEntity" alias="goods" />
 	</typeAliases>
 	

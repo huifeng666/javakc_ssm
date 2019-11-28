@@ -101,10 +101,21 @@ public class GoodsSupplierController {
      */
     @RequestMapping("/views")
     public String views(String ids, ModelMap modelMap){
-        String id=ids.substring(1);
-        GoodsSupplierEntity goodsSupplierEntity =goodsSupplierService.get(id);
+
+        GoodsSupplierEntity goodsSupplierEntity =goodsSupplierService.get(ids);
         modelMap.put("goodsSupplierEntity",goodsSupplierEntity);
         return "yangchu/goodsSupplier/update";
     }
 
+    @RequestMapping("/updates")
+    public String updates(GoodsSupplierEntity goodsSupplierEntity){
+      goodsSupplierService.update(goodsSupplierEntity);
+        return "redirect:goodsSupplier.do";
+    }
+
+    @RequestMapping("/deletes")
+    public String deletes(String[] ids){
+        goodsSupplierService.delete(ids);
+        return "redirect:goodsSupplier.do";
+    }
 }

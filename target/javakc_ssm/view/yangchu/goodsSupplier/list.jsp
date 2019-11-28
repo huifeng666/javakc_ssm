@@ -45,13 +45,13 @@
                     </div>
 					<div class="col-sm-8">
 						<div class="btn-group hidden-xs" role="group">
-							<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="test/create.jsp">
+							<button type="button" class="btn btn-primary" data-toggle="modal" id="create" name="yangchu/goodsSupplier/create.jsp">
 								<i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
 							</button>
 							<button type="button" class="btn btn-success" data-toggle="modal" id="update" name="yangchu/views.do">
 								<i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改
 							</button>
-							<button type="button" class="btn btn-danger" data-toggle="modal" id="delete" name="test/delete.do">
+							<button type="button" class="btn btn-danger" data-toggle="modal" id="delete" name="yangchu/deletes.do">
 								<i class="glyphicon glyphicon-trash" aria-hidden="true"></i>删除
 							</button>
 						</div>
@@ -75,7 +75,6 @@
 					                <th>物资</th>
                                     <th>税率</th>
                                     <th>收货组织</th>
-                                    <th>收货组织</th>
 					            </tr>
 					        </thead>
 					        <tbody>
@@ -88,7 +87,6 @@
 						                <td>${e.goodsEntity.goodsName}</td>
                                         <td>${e.goodsEntity.goodsShuilv}</td>
                                         <td>${e.goodsorgName}</td>
-                                        <td>${e.goodssupplierId}</td>
 						            </tr>
 					            </c:forEach>
 					        </tbody>
