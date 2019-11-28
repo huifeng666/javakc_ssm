@@ -14,11 +14,11 @@ public class SortEntity extends BaseEntity<SortEntity> {
 
     private String pid;
 
-    private String open;
+    private String sortOpen;
 
-    private int order;
+    private int sortOrder;
 
-    private String level;
+    private String sortLevel;
 
     public String getSortId() {
         return sortId;
@@ -60,27 +60,27 @@ public class SortEntity extends BaseEntity<SortEntity> {
         this.pid = pid;
     }
 
-    public String getOpen() {
-        return open;
+    public String getSortOpen() {
+        return sortOpen;
     }
 
-    public void setOpen(String open) {
-        this.open = open;
+    public void setSortOpen(String sortOpen) {
+        this.sortOpen = sortOpen;
     }
 
-    public int getOrder() {
-        return order;
+    public int getSortOrder() {
+        return sortOrder;
     }
 
-    public void setOrder(int order) {
-        this.order = order;
+    public void setSortOrder(int sortOrder) {
+        this.sortOrder = sortOrder;
     }
 
-    public String getLevel() {
-        return level;
+    public String getSortLevel() {
+        return sortLevel;
     }
 
-    public void setLevel(String level) {
-        this.level = level;
+    public void setSortLevel(String sortLevel) {
+        this.sortLevel = sortLevel;
     }
 }

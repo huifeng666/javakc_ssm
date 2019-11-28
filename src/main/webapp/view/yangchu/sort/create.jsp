@@ -97,20 +97,20 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="ds_host">展开</label>
 							<div class="col-sm-2">
-								<input type="radio" name="open" value="0" />关闭
-								<input type="radio" name="open" value="1" />展开
+								<input type="radio" name="sortOpen" value="0" />关闭
+								<input type="radio" name="sortOpen" value="1" />展开
 							</div>
 						</div>
                        <div class="form-group">
                           <label class="col-sm-2 control-label" for="ds_username">序列</label>
                           <div class="col-sm-2">
-                             <input class="form-control" type="text"  name="order"/>
+                             <input class="form-control" type="text"  name="sortOrder"/>
                           </div>
                        </div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="ds_username">等级</label>
 							<div class="col-sm-2">
-								<input class="form-control" type="text"  name="level"/>
+								<input class="form-control" type="text"  name="sortLevel"/>
 							</div>
 						</div>
                     </fieldset>     

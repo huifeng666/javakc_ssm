@@ -12,5 +12,7 @@ $(function()
             content: root+ '/yangchu/sort.do'
         });
     });
-	
 });
+
+
+
