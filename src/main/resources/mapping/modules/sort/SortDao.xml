@@ -17,4 +17,37 @@
     from MATERIAL_TYPE where 1=1 order by TYPE_ORDER ASC
     </select>
 
+    <insert id="insert">
+        insert into MATERIAL_TYPE(GOODS_TYPE_ID,TYPE_NAME,TYPE_PID,TYPE_OPEN,TYPE_ORDER,TYPE_LEVEL)
+        values (#{sortId},#{sortName},#{pid},#{open},#{order},#{level})
+    </insert>
+
+    <select id="get" resultType="com.zhg.javakc.modules.goods.sort.entity.SortEntity">
+        select GOODS_TYPE_ID AS sortId,TYPE_NAME AS sortName,TYPE_PID AS pid
+        from MATERIAL_TYPE where GOODS_TYPE_ID=#{0}
+    </select>
+
+    <update id="update">
+        UPDATE MATERIAL_TYPE SET TYPE_NAME=#{sortName},TYPE_PID=#{pid},TYPE_OPEN=#{open},TYPE_ORDER=#{order},TYPE_LEVEL=#{level}
+        WHERE GOODS_TYPE_ID=#{sortId}
+    </update>
+
+    <select id="querySortById" resultType="java.util.HashMap">
+    select GOODS_TYPE_ID "id",
+    TYPE_NAME "name",
+    TYPE_PID "pId",
+    DECODE(TYPE_OPEN,0,'false',1,'true') "open",
+    TYPE_ORDER "order",
+    TYPE_LEVEL "level"
+    from MATERIAL_TYPE where 1=1 and TYPE_PID=#{sortId} order by TYPE_ORDER ASC
+    </select>
+
+    <delete id="deleteSort">
+        delete from MATERIAL_TYPE where GOODS_TYPE_ID=#{sortId}
+    </delete>
+
+    <delete id="deleteSort2" statementType="CALLABLE">
+        {call delete_sort( #{sortId},mode=in ,jdbcType=VARCHAR )}
+    </delete>
+
 </mapper>

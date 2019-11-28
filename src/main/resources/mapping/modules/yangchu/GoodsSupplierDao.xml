@@ -24,11 +24,18 @@
     </resultMap>
 
     <select id="findList" resultMap="GoodsSupplier">
-        select goods_name,org_name,supplier_name,goods_org_name,goods_shuilv from supplier s ,goods g,goods_supplier gs,company_org c where s.supplier_id=gs.supplier_id and
+        select GOODS_SUPPLIER_ID,goods_name,org_name,supplier_name,goods_org_name,goods_shuilv from supplier s ,goods g,goods_supplier gs,company_org c where s.supplier_id=gs.supplier_id and
         g.goods_id=gs.goods_id and c.org_id=gs.org_id
     </select>
 
+    <insert id="insert">
+        INSERT INTO GOODS_SUPPLIER(GOODS_SUPPLIER_ID,GOODS_ID,SUPPLIER_ID,ORG_ID,GOODS_ORG_NAME) VALUES
+        (#{goodssupplierId},#{goodsId},#{supplierId},#{orgId},#{goodsorgName})
+    </insert>
 
-
-
+    <select id="get" resultMap="GoodsSupplier">
+         select goods_name,org_name,supplier_name,goods_org_name,goods_shuilv from supplier s ,goods g,goods_supplier gs,company_org c where s.supplier_id=gs.supplier_id and
+        g.goods_id=gs.goods_id and c.org_id=gs.org_id and GOODS_SUPPLIER_ID=#{0}
+    </select>
 </mapper>
+

@@ -9,5 +9,8 @@ import java.util.Map;
 public interface SortDao extends BaseDao<SortEntity> {
 
     public List<Map<String,Object>> querySort();
+    public List<Map<String,Object>> querySortById(String sortId);
+    public void deleteSort(String sortId);
+    public void deleteSort2(String sortId);
 
 }

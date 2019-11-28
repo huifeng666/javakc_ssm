@@ -20,34 +20,34 @@
                           	<label class="col-sm-2 control-label" for="orgid">组织名称</label>
                           	<div class="col-sm-10">
 								<input class="form-control" id="orgidtree" name="orgId" />
-                            	<input class="form-control" id="orgid"  type="text" placeholder="点击填写组织名称"/>
+                            	<input class="form-control" id="orgid"  type="text" name="orgName" value="${goodsSupplierEntity.goodssupplierId}"/>
                           	</div>
                        	</div>
                        	<div class="form-group">
                           	<label class="col-sm-2 control-label" for="roleremark">供应商名称</label>
                           	<div class="col-sm-10">
 								<input class="form-control" id="menupidValue2" name="supplierId" />
-                            	<input class="form-control" id="supplier" name="roleRemark" type="text" placeholder="点击选择供应商名称"/>
+                            	<input class="form-control" id="supplier" name="roleRemark" type="text" />
                           	</div>
                        	</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="roleremark">物资名称</label>
 							<div class="col-sm-10">
 								<input class="form-control" id="menupidValue" name="goodsId" />
-								<input class="form-control" id="goodsid" name="roleRemark" type="text" placeholder="点击选择物资名称"/>
+								<input class="form-control" id="goodsid" name="roleRemark" type="text" />
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="roleremark">税率</label>
 							<div class="col-sm-10">
-								<input class="form-control" id="roleremark3" name="roleRemark" type="text" placeholder="填写税率"/>
+								<input class="form-control" id="roleremark3" name="roleRemark" type="text" />
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="roleremark">收货组织名称</label>
 							<div class="col-sm-10">
 								<input class="form-control" id="orgidSpace" />
-								<input class="form-control" id="orgid2"  name="goodsorgName" type="text" placeholder="填写收货组织名称"/>
+								<input class="form-control" id="orgid2"  name="goodsorgName" type="text" />
 							</div>
 						</div>
                     </fieldset>     

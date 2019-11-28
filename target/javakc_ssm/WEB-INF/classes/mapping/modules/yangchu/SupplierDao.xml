@@ -21,7 +21,7 @@
         <id property="updateDate" column="update_time"/>
     </resultMap>
 
-    <select id="findList" resultMap="supplier">
+    <select id="findList" resultMap="supplier" >
         select
         supplier_id,supplier_name,supplier_type,
         supplier_contact,supplier_contectnum,supplier_portal,supplier_contract

@@ -74,11 +74,6 @@
 		<script type="text/javascript">
 			$(function()
 			{
-				// $('.tree').treegrid(
-				// 		{
-				// 			treeColumn: 1
-				// 		});
-
 				var index = parent.layer.getFrameIndex(window.name);
 
 				$('#ascertain').click(function()

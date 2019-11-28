@@ -12,25 +12,28 @@
 				<div class="col-sm-4"><input type="button" value="返回上一页" class="btn btn-success" onclick="javascript:history.back();"/></div>
 			</div>
 			<div class="ibox float-e-margins">
-				<form action="${path }/role/create.do" method="post" enctype="multipart/form-data"
+				<form action="${path}/yangchu/saveGoods.do" method="post" enctype="multipart/form-data"
 					class="form-horizontal" role="form">
                     <fieldset>
 						<legend>基本信息</legend>
                        	<div class="form-group">
                           	<label class="col-sm-2 control-label" for="orgid">组织名称</label>
                           	<div class="col-sm-10">
-                            	<input class="form-control" id="orgid" name="roleName" type="text" placeholder="点击填写组织名称"/>
+								<input class="form-control" id="orgidtree" name="orgId" />
+                            	<input class="form-control" id="orgid"  type="text" placeholder="点击填写组织名称"/>
                           	</div>
                        	</div>
                        	<div class="form-group">
                           	<label class="col-sm-2 control-label" for="roleremark">供应商名称</label>
                           	<div class="col-sm-10">
-                            	<input class="form-control" id="roleremark1" name="roleRemark" type="text" placeholder="点击选择供应商名称"/>
+								<input class="form-control" id="menupidValue2" name="supplierId" />
+                            	<input class="form-control" id="supplier" name="roleRemark" type="text" placeholder="点击选择供应商名称"/>
                           	</div>
                        	</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="roleremark">物资名称</label>
 							<div class="col-sm-10">
+								<input class="form-control" id="menupidValue" name="goodsId" />
 								<input class="form-control" id="goodsid" name="roleRemark" type="text" placeholder="点击选择物资名称"/>
 							</div>
 						</div>
@@ -43,7 +46,8 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="roleremark">收货组织名称</label>
 							<div class="col-sm-10">
-								<input class="form-control" id="roleremark" name="roleRemark" type="text" placeholder="填写收货组织名称"/>
+								<input class="form-control" id="orgidSpace" />
+								<input class="form-control" id="orgid2"  name="goodsorgName" type="text" placeholder="填写收货组织名称"/>
 							</div>
 						</div>
                     </fieldset>     
@@ -65,7 +69,7 @@
 	</body>
 	<script type="text/javascript" src="${path }/static/js/plugins/treegrid/jquery.treegrid.min.js"></script>
 	<script type="text/javascript" src="${path }/static/js/plugins/treegrid/jquery.treegrid.bootstrap3.js"></script>
-	<script type="text/javascript" src="${path }/view/system/role/js/role.js"></script>
+<%--	<script type="text/javascript" src="${path }/view/system/role/js/role.js"></script>--%>
 	<script type="text/javascript" src="${path }/static/js/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
 	<script type="text/javascript" src="${path }/view/yangchu/goodsSupplier/js/goodsSupplier-create.js"></script>
 </html>

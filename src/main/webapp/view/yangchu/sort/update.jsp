@@ -75,14 +75,15 @@
 				<div class="col-sm-4"><input type="button" value="返回上一页" class="btn btn-success" onclick="javascript:history.back();"/></div>
 			</div>
 			<div class="ibox float-e-margins">
-				<form action="${path }/sort/save.do" method="post" class="form-horizontal" role="form">
+				<form action="${path }/sort/update.do" method="post" class="form-horizontal" role="form">
 					<input type="hidden" id="pid" name="pid" value="">
+					<input type="hidden1" name="sortId" id="sortId" value="${sortEntity.sortId}">
                     <fieldset>
                         <legend>测试基本信息</legend>
 						<div class="form-group">
 							<a id="menuBtn" href="#" onclick="showMenu(); return false;" class="col-sm-2 control-label">选择</a>
 							<div class="col-sm-2">
-								<input class="form-control" type="text" id="nodeName" name="nodeName" />
+								<input class="form-control" type="text" id="nodeName" name="nodeName" value="${sortEntity.nodeName}"/>
 								<div id="menuContent" class="menuContent" style="display:none;">
 									<ul id="treeDemo" class="ztree" style="margin-top:0; width:160px;"></ul>
 								</div>
@@ -91,26 +92,26 @@
                        <div class="form-group">
                           <label class="col-sm-2 control-label" for="ds_host">名称</label>
                           <div class="col-sm-2">
-                             <input class="form-control" type="text" name="sortName" />
-                          </div>
+                             <input class="form-control" type="text" name="sortName" value="${sortEntity.sortName}"/>
+					   </div>
                        </div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="ds_host">展开</label>
 							<div class="col-sm-2">
-								<input type="radio" name="open" value="0" />关闭
-								<input type="radio" name="open" value="1" />展开
+								<input type="radio" name="open" value="${sortEntity.open}" />关闭
+								<input type="radio" name="open" value="${sortEntity.open}" />展开
 							</div>
 						</div>
                        <div class="form-group">
                           <label class="col-sm-2 control-label" for="ds_username">序列</label>
                           <div class="col-sm-2">
-                             <input class="form-control" type="text"  name="order"/>
+                             <input class="form-control" type="text"  name="order" value="${sortEntity.order}" />
                           </div>
                        </div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="ds_username">等级</label>
 							<div class="col-sm-2">
-								<input class="form-control" type="text"  name="level"/>
+								<input class="form-control" type="text"  name="level" value="${sortEntity.level}" />
 							</div>
 						</div>
                     </fieldset>     
