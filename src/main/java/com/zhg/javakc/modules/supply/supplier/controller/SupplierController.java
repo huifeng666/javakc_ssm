@@ -4,6 +4,7 @@ import com.zhg.javakc.base.page.Page;
 import com.zhg.javakc.base.util.CommonUtil;
 import com.zhg.javakc.modules.supply.supplier.entity.SupplierEntity;
 import com.zhg.javakc.modules.supply.supplier.service.SupplierService;
+import com.zhg.javakc.modules.supply.tree.service.TreeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,7 +24,8 @@ import java.util.Random;
 public class SupplierController {
     @Autowired
     private SupplierService supplierService;
-
+    @Autowired
+    private TreeService treeService;
 
 
     @RequestMapping("/supplierquery")
@@ -64,9 +66,9 @@ public class SupplierController {
         return "redirect:supplierquery.do";
     }
     @RequestMapping("/suppliercreatOrg")
-    public String creatOrg (SupplierEntity supplierEntity,ModelMap modelMap) throws Exception{
-      modelMap.put("page",supplierService.findList(supplierEntity));
-        return "yangchu/tree/list";
+    public String suppliercreatOrg( ModelMap modelMap) throws Exception{
+      modelMap.put("list",treeService.queryAllOrg());
+        return "yangchu/supplier/tree";
     }
     }
 
