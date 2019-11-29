@@ -16,7 +16,6 @@ $(function()
 		   $('#searchForm').submit();
 		}
 	});
-	
 	//点击展示页面添加按钮触发事件
 	$('#create').click(function()
 	{

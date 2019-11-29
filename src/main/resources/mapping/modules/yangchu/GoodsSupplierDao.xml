@@ -34,8 +34,19 @@
     </insert>
 
     <select id="get" resultMap="GoodsSupplier">
-         select goods_name,org_name,supplier_name,goods_org_name,goods_shuilv from supplier s ,goods g,goods_supplier gs,company_org c where s.supplier_id=gs.supplier_id and
-        g.goods_id=gs.goods_id and c.org_id=gs.org_id and GOODS_SUPPLIER_ID=#{0}
+           select goods_supplier_id,goods_name,org_name,supplier_name,goods_org_name,goods_shuilv,gs.goods_id,gs.supplier_id,gs.org_id,gs.goods_org_name from supplier s ,goods g,goods_supplier gs,company_org c where s.supplier_id=gs.supplier_id and
+     g.goods_id=gs.goods_id and c.org_id=gs.org_id and GOODS_SUPPLIER_ID=#{0}
     </select>
+    <update id="update">
+        UPDATE GOODS_SUPPLIER SET GOODS_ID=#{goodsId},SUPPLIER_ID=#{supplierId},ORG_ID=#{orgId},GOODS_ORG_NAME=#{goodsorgName}
+        WHERE GOODS_SUPPLIER_ID=#{goodssupplierId}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM GOODS_SUPPLIER WHERE GOODS_SUPPLIER_ID IN
+        <foreach collection="array" item="goodssupplierId" open="(" separator="," close= ")">
+            #{goodssupplierId}
+        </foreach>
+    </delete>
 </mapper>
 

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>供应商修改页面</title>
+    <title>央厨--供应商修改页面</title>
     <%@ include file="../../../common/jsp/header.jsp" %>
     <link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
 </head>
@@ -117,6 +117,7 @@
     </div>
 </div>
 </body>
-<script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>
-<script type="text/javascript" src="./js/dictionary.js"></script>
+<%--<script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>--%>
+<%--<script type="text/javascript" src="./js/dictionary.js"></script>--%>
+<script type="text/javascript" src="${path }/view/yangchu/supplier/js/supplier-create.js"></script>
 </html>

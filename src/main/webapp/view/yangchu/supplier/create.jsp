@@ -19,7 +19,7 @@
                                      onclick="javascript:history.back();"/></div>
     </div>
     <div class="ibox float-e-margins">
-        <form action="${path }/yangchu/suppliersave.do" method="post" class="form-horizontal" role="form" >
+        <form action="${path }/yangchu/suppliersave.do" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
             <fieldset>
                 <legend>央厨--供应商基本信息</legend>
                 <div class="form-group">
@@ -82,7 +82,7 @@
                     </div>
                     <label class="col-sm-1  control-label" >联系人邮箱</label>
                     <div class="col-sm-3">
-                        <input class="form-control" type="text" id="supplierContectemall" name="supplierContectemall" placeholder="请输入"/>
+                        <input class="form-control" type="text" id="supplierContectemail" name="supplierContectemail" placeholder="请输入"/>
                     </div>
                 </div>
                 <legend></legend>
@@ -110,8 +110,7 @@
     </div>
 </div>
 </body>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>
-<%--<script type="text/javascript" src="./js/dictionary.js"></script>--%>
+<%--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>--%>
+<%--<script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>--%>
 <script type="text/javascript" src="${path }/view/yangchu/supplier/js/supplier-create.js"></script>
 </html>

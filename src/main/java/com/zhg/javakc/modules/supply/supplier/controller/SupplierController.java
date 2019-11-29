@@ -1,7 +1,6 @@
 package com.zhg.javakc.modules.supply.supplier.controller;
 
 import com.zhg.javakc.base.page.Page;
-import com.zhg.javakc.base.util.CommonUtil;
 import com.zhg.javakc.modules.supply.supplier.entity.SupplierEntity;
 import com.zhg.javakc.modules.supply.supplier.service.SupplierService;
 import com.zhg.javakc.modules.supply.tree.service.TreeService;

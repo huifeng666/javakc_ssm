@@ -133,15 +133,16 @@ function showorg() {
 //     }
 //     return false;
 // });
-$(function () {
+$(function ()
+{
     $('form:eq(0)').bootstrapValidator({
-        message: '这个值是无效的',
-        //校验是显示图标
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
+    message: '这个值是无效的',
+    //校验是显示图标
+    feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
         fields: {
             //校验供应商名称
             supplierName: {
@@ -233,7 +234,7 @@ $(function () {
                 }
             },
             //供应商电子邮箱校验
-            supplierContectemall: {
+            supplierContectemail: {
                 validators: {
                     notEmpty: {
                         message: '供应商电子邮箱是必填项,不能为空!'
@@ -246,4 +247,6 @@ $(function () {
             }
         }
     });
-});
+    });
+
+

@@ -3,22 +3,22 @@
 <mapper namespace="com.zhg.javakc.modules.supply.supplier.dao.SupplierDao">
     <resultMap id="supplier" type="supplier">
         <id property="supplierId" column="supplier_id"/>
-        <id property="supplierName" column="supplier_name"/>
-        <id property="supplierType" column="supplier_type"/>
-        <id property="supplierOrg" column="supplier_org"/>
-        <id property="supplierLevel" column="supplier_level"/>
-        <id property="supplierSim" column="supplier_sim"/>
-        <id property="supplierFaren" column="supplier_faren"/>
-        <id property="supplierFarenph" column="supplier_farenph"/>
-        <id property="supplierAddr" column="supplier_addr"/>
-        <id property="supplierTrustnum" column="supplier_trustnum"/>
-        <id property="supplierContact" column="supplier_contact"/>
-        <id property="supplierContectnum" column="supplier_contectnum"/>
-        <id property="supplierContectemail" column="supplier_contectemail"/>
-        <id property="supplierPortal" column="supplier_portal"/>
-        <id property="supplierContract" column="supplier_contract"/>
-        <id property="createDate" column="create_time"/>
-        <id property="updateDate" column="update_time"/>
+        <result property="supplierName" column="supplier_name"/>
+        <result property="supplierType" column="supplier_type"/>
+        <result property="supplierOrg" column="supplier_org"/>
+        <result property="supplierLevel" column="supplier_level"/>
+        <result property="supplierSim" column="supplier_sim"/>
+        <result property="supplierFaren" column="supplier_faren"/>
+        <result property="supplierFarenph" column="supplier_farenph"/>
+        <result property="supplierAddr" column="supplier_addr"/>
+        <result property="supplierTrustnum" column="supplier_trustnum"/>
+        <result property="supplierContact" column="supplier_contact"/>
+        <result property="supplierContectnum" column="supplier_contectnum"/>
+        <result property="supplierContectemail" column="supplier_contectemail"/>
+        <result property="supplierPortal" column="supplier_portal"/>
+        <result property="supplierContract" column="supplier_contract"/>
+        <result property="createDate" column="create_time"/>
+        <result property="updateDate" column="update_time"/>
     </resultMap>
 
     <select id="findList" resultMap="supplier" >

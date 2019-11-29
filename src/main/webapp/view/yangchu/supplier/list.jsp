@@ -22,7 +22,7 @@
                                placeholder="请回车搜索！！！">
                     </div>
                     <div class="col-md-2"></div>
-<%--                    <label class="control-label col-md-1"></label>--%>
+                    <label class="control-label col-md-1"></label>
                     <div class="col-md-4">
                         <span>供应商</span>
                         <input class="form-control " id="search1" name="supplierName"

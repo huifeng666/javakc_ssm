@@ -41,7 +41,7 @@ public class SupplierEntity extends BaseEntity<SupplierEntity> {
     /**
      * 供应商法人电话
      */
-    private int supplierFarenph;
+    private long supplierFarenph;
 
     /**
      * 供应商地址
@@ -60,7 +60,7 @@ public class SupplierEntity extends BaseEntity<SupplierEntity> {
     /**
      * 供应商联系电话
      */
-    private int supplierContectnum;
+    private long supplierContectnum;
     /**
      * 供应商联系人邮件
      */
@@ -131,14 +131,6 @@ public class SupplierEntity extends BaseEntity<SupplierEntity> {
         this.supplierFaren = supplierFaren;
     }
 
-    public int getSupplierFarenph() {
-        return supplierFarenph;
-    }
-
-    public void setSupplierFarenph(int supplierFarenph) {
-        this.supplierFarenph = supplierFarenph;
-    }
-
     public String getSupplierAddr() {
         return supplierAddr;
     }
@@ -163,15 +155,6 @@ public class SupplierEntity extends BaseEntity<SupplierEntity> {
         this.supplierContact = supplierContact;
     }
 
-    public int getSupplierContectnum() {
-        return supplierContectnum;
-    }
-
-    public void setSupplierContectnum(int supplierContectnum) {
-        this.supplierContectnum = supplierContectnum;
-    }
-
-
     public int getSupplierPortal() {
         return supplierPortal;
     }
@@ -195,5 +178,21 @@ public class SupplierEntity extends BaseEntity<SupplierEntity> {
 
     public void setSupplierContectemail(String supplierContectemail) {
         this.supplierContectemail = supplierContectemail;
+    }
+
+    public long getSupplierFarenph() {
+        return supplierFarenph;
+    }
+
+    public void setSupplierFarenph(long supplierFarenph) {
+        this.supplierFarenph = supplierFarenph;
+    }
+
+    public long getSupplierContectnum() {
+        return supplierContectnum;
+    }
+
+    public void setSupplierContectnum(long supplierContectnum) {
+        this.supplierContectnum = supplierContectnum;
     }
 }
