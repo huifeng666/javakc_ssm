@@ -5,7 +5,6 @@
         <id property="supplierId" column="supplier_id"/>
         <result property="supplierName" column="supplier_name"/>
         <result property="supplierType" column="supplier_type"/>
-        <result property="supplierOrg" column="supplier_org"/>
         <result property="supplierLevel" column="supplier_level"/>
         <result property="supplierSim" column="supplier_sim"/>
         <result property="supplierFaren" column="supplier_faren"/>
@@ -26,7 +25,7 @@
         supplier_id,supplier_name,supplier_type,
         supplier_contact,supplier_contectnum,supplier_portal,supplier_contract
         from supplier where 1=1
-        <if test="supplierContact!='' and supplierContact!=null">
+        <if test="supplierContact!='' and  supplierContact!=null">
             AND supplier_contact LIKE '%'||#{supplierContact}||'%'
         </if>
         <if test="supplierName!='' and supplierName!=null">
@@ -42,7 +41,6 @@
         (#{supplierId},#{supplierName},#{supplierType},#{supplierOrg},#{supplierLevel},#{supplierSim},#{supplierFaren},#{supplierFarenph},#{supplierAddr},#{supplierTrustnum},
         #{supplierContact},#{supplierContectnum},#{supplierContectemail},#{supplierPortal},#{supplierContract})
     </insert>
-
     <select id="get" resultMap="supplier">
         SELECT supplier_id,supplier_name,supplier_type,supplier_org,supplier_level,
         supplier_sim,supplier_faren,supplier_farenph,supplier_addr,supplier_trustnum,
@@ -64,7 +62,7 @@
 
     <update id="update">
         UPDATE supplier SET
-        supplier_name=#{supplierName},supplier_type=#{supplierType},supplier_org=#{supplierOrg},supplier_level=#{supplierLevel},
+        supplier_name=#{supplierName},supplier_type=#{supplierType},supplier_org=#{orgid},supplier_level=#{supplierLevel},
         supplier_sim=#{supplierSim},supplier_faren=#{supplierFaren},supplier_farenph=#{supplierFarenph},supplier_addr=#{supplierAddr},supplier_trustnum=#{supplierTrustnum},
         supplier_contact=#{supplierContact},supplier_contectnum=#{supplierContectnum},supplier_contectemail=#{supplierContectemail},
         supplier_portal=#{supplierPortal},supplier_contract=#{supplierContract}

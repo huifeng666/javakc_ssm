@@ -15,11 +15,13 @@
 <body>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div>
+
         <div class="col-sm-4"><input type="button" value="返回上一页" class="btn btn-success"
                                      onclick="javascript:history.back();"/></div>
     </div>
     <div class="ibox float-e-margins">
         <form action="${path }/yangchu/suppliersave.do" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
+<%--            <input  class="form-control" type="hidden1" id="orgid1" name="orgid"/>--%>
             <fieldset>
                 <legend>央厨--供应商基本信息</legend>
                 <div class="form-group">
@@ -29,8 +31,9 @@
                     </div>
                     <label class="col-sm-1 control-label" style="display: none"></label>
                     <div class="col-sm-3" >
-                        <input class="form-control" id="orgid" name="orgname" type="text" style="display: none"
-                               readonly placeholder="点击选择供应商内部组织"/>
+
+                        <input class="form-control" id="orgid" name="supplierOrg" type="text" style="display: none"
+                              value=""/>
                     </div>
                 </div>
                 <legend></legend>

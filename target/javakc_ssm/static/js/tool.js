@@ -16,6 +16,12 @@ $(function()
 		   $('#searchForm').submit();
 		}
 	});
+	//搜索完毕,回车触发事件
+	$('#search1').keydown(function(e){
+		if(e.keyCode==13){
+			$('#searchForm').submit();
+		}
+	});
 	//点击展示页面添加按钮触发事件
 	$('#create').click(function()
 	{

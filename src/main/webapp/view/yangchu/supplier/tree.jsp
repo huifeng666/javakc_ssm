@@ -48,8 +48,8 @@
 					name = nodes[i].name;
 				}
 
-				$("#orgid").val(id);
-				var ids = $('#orgid').val()
+				$("#idd").val(id);
+				var ids = $('#idd').val()
 
 				parent.$('#orgid').val(name);
 				parent.$('#orgidtree').val(ids);
@@ -88,7 +88,7 @@
 		if (id.length > 0 ) id = id.substring(0, id.length-1);
 		var nodeName = $("#nodeName");
 		nodeName.attr("value", v);
-		$("#orgId").val(id);
+		$("#idd").val(id);
 	}
 
 	// function hideMenu() {
@@ -107,7 +107,7 @@
 <div class="wrapper wrapper-content animated fadeInRight">
 	<div class="ibox float-e-margins">
 		<form id="searchForm" action="">
-			<input type="hidden" id="orgId" name="orgId">
+			<input type="hidden2" id="idd" name="idd">
 			<div class="col-sm-12">
 				<!-- ------------按钮组 start------------ -->
 				<div class="alert alert-success" role="alert">西贝集团--组织详细信息</div>

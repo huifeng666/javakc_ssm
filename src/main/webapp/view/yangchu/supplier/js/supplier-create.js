@@ -13,7 +13,7 @@ $(function () {
 
 })
 
-
+//弹出组织选项框
 function showorg() {
     //取得typeid绑定的值
     var xx = $("#typeid").val();

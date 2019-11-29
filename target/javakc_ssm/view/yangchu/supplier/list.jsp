@@ -12,7 +12,7 @@
         <form id="searchForm" action="">
             <div class="col-sm-12">
                 <!-- ------------按钮组 start------------ -->
-                <div class="alert alert-success" role="alert">供应商详细信息</div>
+                <div class="alert alert-success" role="alert">央厨--供应商详细信息</div>
                 <div class="form-group">
 <%--                    <label class="col-md-1 control-label"></label>--%>
                     <div class="col-md-2">

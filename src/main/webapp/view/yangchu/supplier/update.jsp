@@ -2,11 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>央厨--供应商修改页面</title>
     <%@ include file="../../../common/jsp/header.jsp" %>
     <link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
 </head>
 <body>
+
 <div class="wrapper wrapper-content animated fadeInRight">
     <div>
         <div class="col-sm-4"><input type="button" value="返回上一页" class="btn btn-success"
@@ -21,12 +23,12 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label">供应商类型</label>
                     <div class="col-sm-3">
-                        <zhg:select codeTp="type" name="supplierType" cls="form-control" def="true"
+                        <zhg:select codeTp="type" id="typeid" name="supplierType" cls="form-control" def="true"
                                     value="${supplierEntity.supplierType}"></zhg:select>
                     </div>
                     <label class="col-sm-1 control-label">供应商内部组织</label>
                     <div class="col-sm-3">
-                        <input class="form-control" type="text" name="supplierOrg"
+                        <input class="form-control" type="text" name="orgname" id="orgid"
                                value="${supplierEntity.supplierOrg}">
                     </div>
                 </div>

@@ -1,6 +1,8 @@
 package com.zhg.javakc.modules.supply.supplier.entity;
 
 import com.zhg.javakc.base.entity.BaseEntity;
+import com.zhg.javakc.modules.org.tree.entity.OrgtreeEntity;
+import com.zhg.javakc.modules.supply.tree.entity.TreeEntity;
 
 import javax.persistence.*;
 
